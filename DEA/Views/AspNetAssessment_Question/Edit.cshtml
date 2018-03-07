@@ -1,0 +1,56 @@
+﻿
+
+        @model DEA.Models.AspNetAssessment_Question
+        @{
+            ViewBag.Title = "Edit";
+        }
+
+<label>@Html.ActionLink("Home", "Dashboard", "Account") > <a href="#" class="sidebar-toggle navigate" data-toggle="offcanvas" style="background-color:#F7F7F7 !important">User</a> > @Html.ActionLink("Assessment Questions", "Index", "AspNetAssessment_Question") > <a href="#"><b>Edit</b></a> </label>
+        <h4>Edit</h4>
+
+        <div class="box box-primary">
+            <div class="box-body">
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        <h4>Assessment_Question</h4>
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.Id)
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Question, htmlAttributes: new { @class = "control-label col-md-1 col-lg-1" })
+                            <div class="col-md-6">
+                                @Html.EditorFor(model => model.Question, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Question, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-1 col-lg-1">Subject Name</label>
+                            <div class="col-md-6">
+                                @Html.DropDownList("SubjectID", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.SubjectID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-1 col-lg-1">Question Category</label>
+
+                            <div class="col-md-6">
+                                @Html.DropDownList("QuestionCategory", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.QuestionCategory, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <div class="col-md-offset-1 col-lg-offset-1 col-md-2">
+                                <input type="submit" value="Update" class="btn btn-primary" />
+                                <input type="submit" value="Cancel" onclick="window.location.href='Index'" class="btn btn-default" />
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>

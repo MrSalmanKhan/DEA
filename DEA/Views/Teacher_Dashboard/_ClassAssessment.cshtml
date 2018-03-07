@@ -1,0 +1,602 @@
+﻿@*@model DEA.Models.AspNetAttendance*@
+<link href="~/Content/EeNiArTWork.css" rel="stylesheet" />
+<script type="text/javascript">
+
+
+
+    $(document).ready(function () {
+        debugger;
+        var classcookieval = null;
+        var allcookies = document.cookie;
+
+
+        $('#Comment_Save').prop('disabled', true);
+
+        // Get all the cookies pairs in an array
+        cookiearray = allcookies.split(';');
+
+        // Now take key value pair out of this array
+        for (var i = 0; i < cookiearray.length; i++) {
+            name = cookiearray[i].split('=')[0];
+            value = cookiearray[i].split('=')[1];
+
+            console.log(cookiearray[i]);
+
+            if (cookiearray[i].split('=')[0] == " ClassCookieassessment" || cookiearray[i].split('=')[0] == "ClassCookieattendance") {
+                classcookieval = cookiearray[i].split('=')[1];
+
+            }
+
+
+        }
+
+
+        $("#ClassID").change(function () {
+            //debugger;
+            $('.eeniart0017').css("display", "block");
+            
+            var selectedClass = $("#ClassID").val();
+            $.get('@Url.Action("StudentsByClass_Teacher", "TermAssessment")',
+                { id: selectedClass },
+                function (data) {
+                    $('.eeniart0017').css("display", "none");
+                    $('#StudentTable').html(' ');
+                    debugger;
+                    if (data != "Term of the latest session is not started yet") {
+                        $.each(data, function (i, item) {
+
+                            var Status;
+                            if (item.Status == "pending") {
+                                Status = "<span class='glyphicon glyphicon-question-sign text-danger'></span>";
+                            } else if (item.Status == "ok") {
+                                Status = "<span class='glyphicon glyphicon-ok-circle text-success'></span>";
+                            } else if (item.Status == "not submitted") {
+                                Status = "<span style='color:moccasin' class='glyphicon glyphicon-exclamation-sign'></span>";
+                            }
+                            debugger;
+                            $('#StudentTable').append("<tr id=" + item.Id + "><td><div>" + item.Name + "</div> </td><td><a id='" + item.Id + "' href='#' + onclick ='Student_Evaluation(this)' >Evaluate Student</a></td><td>" + Status + "</td></tr>");
+                        });
+                    } else {
+                        console.log("ok");
+                        $('#myModal2').modal('show');
+                    }
+                });
+        });
+
+
+
+    });
+
+    function selectclasschange() {
+        var selectedClass = $("#ClassID").val();
+        $.get('@Url.Action("StudentsByClass_Teacher", "TermAssessment")',
+            { id: selectedClass },
+            function (data) {
+
+                $('#StudentTable').html(' ');
+                debugger;
+                if (data != "Term of the latest session is not started yet") {
+                    $.each(data, function (i, item) {
+
+                        var Status;
+                        if (item.Status == "pending") {
+                            Status = "<span class='glyphicon glyphicon-question-sign text-danger'></span>";
+                        } else if (item.Status == "ok") {
+                            Status = "<span class='glyphicon glyphicon-ok-circle text-success'></span>";
+                        } else if (item.Status == "not submitted") {
+                            Status = "<span style='color:moccasin' class='glyphicon glyphicon-exclamation-sign'></span>";
+                        }
+                        debugger;
+                        $('#StudentTable').append("<tr id=" + item.Id + "><td><div>" + item.Name + "</div> </td><td><a id='" + item.Id + "' href='#' + onclick ='Student_Evaluation(this)' >Evaluate Student</a></td><td>" + Status + "</td></tr>");
+                    });
+                } else {
+                    console.log("ok");
+                    $('#myModal2').modal('show');
+                }
+            });
+    }
+    function Tcomment()
+    {
+       var stdid= $('#hidden').val();
+        var tc = $("#TC").val();
+        var termid = $("#TermID").val();
+        $.ajax({
+            type: "POST",
+            url: "/TermAssessment/SaveComments",
+            data: { 'tc': tc, 'stdid': stdid, 'termid': termid, 'type': 'teacher' },
+            success: function () {
+            }
+      
+        });
+    }
+    function Student_Evaluation(item) {
+        debugger;
+        $('.eeniart0017').css("display", "block");
+        $('#hidden').val(item.id);
+        console.log(item);
+        var name = item.closest("tr");
+        name = $(name).find("td div");
+        name = $(name).html();
+        $("#StudentName").html(name);
+
+        name = item.closest("tr");
+        $("#trId").val(name.id);
+
+        var trrmid = $("#TermID").val();
+
+        $.ajax({
+            type: "POST",
+            url: "/TermAssessment/ClassEvaluations",
+            data: { 'StudentId': item.id, "type": "teacher", TermId: trrmid },
+            success: function (data) {
+                debugger;
+                $('.eeniart0017').css("display", "none");
+                if (data.status == "success") {
+                    evalutionfrom();
+                    var termid = data.TId;
+                    var subjects = data.Value
+                    var teacherComment = data.teacherComent;
+                    var parentComment=data.parentComment;
+                    var principalcomment=data.principalcomment;
+                    $('#Evaluation_data').html('');
+                    var table = $('<table class="table" id="Evaluation_Question_Table"><tr style="display:none"><th>Questions</th><th>Assessment</th></tr></table>');
+                    $('#Evaluation_data').append(table);
+                    for (var i = 0; i < subjects.length; i++) {
+                        var Data = subjects[i];
+                        var dfdf = $('<td class="text-bold"><h3>' + Data.SubjectName + '</h3></td><td style="float:right"><button class="btn btn-primary save_comment">Assessment Report</button></td>')
+                        //.append($('<div>').addClass('icheckbox_flat-blue').css({ "position": "relative" }).attr("id", Data.Id).click(Singlecheak).data(Data)
+                        $('#Evaluation_Question_Table').append($('<tr>').attr("id", Data.Id).click(Data, Reportit).data(Data).append(dfdf))
+                        $('#Evaluation_Question_Table').append($('<tr>')//.attr("id", "eeniart"+Data.Id)//.click(Data, Reportit).data(Data)
+                            .append($('<td>').attr("id", "eeniart" + Data.Id).attr("colspan", "2"))
+                            )
+                    }                  
+                    $('#TC').val(teacherComment);                    
+                    $('#PC').val(parentComment);
+                    $('#PrC').val(principalcomment);
+                }
+                else {
+
+                }
+
+
+
+                //$('#Evaluation_data').html(data);
+                $('Comment_Evaluation').prop('disabled', false);
+            },
+            error: function (xhr) {
+                debugger;
+                alert(xhr.responseText);
+            }
+        });
+
+    }
+
+    function evalutionfrom() {
+        $("#TermID").prop('disabled', true);
+        $("#ClassID").prop('disabled', true);
+        $("#saceassess").prop('disabled', false);
+        $("#evaliationformeeniart").css("display", "block");
+        $("#studentseeniart").css("display", "none");
+    }
+    function studentseeni() {
+        $("#TermID").prop('disabled', false);
+        $("#ClassID").prop('disabled', false);
+        $("#evaliationformeeniart").css("display", "none");
+        $("#studentseeniart").css("display", "block");
+    }
+
+    function Reportit(e) {
+        debugger;
+        //var subid = e.parentElement.parentElement.id;
+        var sub = e.data;
+        var trrmid = $("#TermID").val();
+        $('.eeniart0017').css("display", "block");
+        $.ajax({
+            type: "POST",
+            url: "/TermAssessment/subqueEvaluations",
+            data: { StudentId: sub.StudentID, SubId: sub.Id, TermId: trrmid },
+            success: function (data) {
+                debugger;
+                $('.eeniart0017').css("display", "none");
+                if (data.status == "success") {
+                    openquesrom(sub.Id);
+                    //var termid = data.TId;
+                    var questions = data.Value
+                    var appendarea = $("#Evaluation_Question_Table").find("#eeniart" + sub.Id)[0]
+                    $(appendarea).html('<table style="width: 100%;" id ="sub' + sub.Id + '"></table>')
+                    var ddder = $('<tr style="border-bottom:1px solid #f4f4f4;"><th>Questions</th><th class="form-group"><div class="col-md-4 eeniart001">1st Term</div><div class="col-md-4 eeniart001">2nd Term</div><div class="col-md-4 eeniart001">3rd Term</div></th></tr>')
+                    var ddder1 = $('<tr style="border-bottom:1px solid #f4f4f4;"><th>Questions</th><th class="form-group"><div class="col-md-6 col-md-offset-1 eeniart001">Term Evaluation</div></th></tr>')
+                    if (data.ClassId == 88 || data.ClassId == 89 || data.ClassId == 91 || data.ClassId == 95) {
+                    $("#sub" + sub.Id).append(ddder)
+                    }
+                    else if (data.ClassId == 86 || data.ClassId == 87 || data.ClassId == 92 || data.ClassId == 93 || data.ClassId == 94) {
+                        $("#sub" + sub.Id).append(ddder1)
+                    }
+
+
+                    for (var i = 0; i < questions.length; i++) {
+                        var Data = questions[i];
+                        if (data.ClassId == 88 || data.ClassId == 89 || data.ClassId == 91 || data.ClassId == 95) {
+                        
+
+
+                        //if (data.TId == 1) {
+                            if (Data.FirstTermGrade == "y") {
+                                var dffdf1 = '<option value="x">Not Assessed</option><option selected value="y">Yes</option><option value="w">With help</option><option value="n">Not yet</option>';
+                            }
+                            else if (Data.FirstTermGrade == "w") {
+                                var dffdf1 = '<option value="x">Not Assessed</option><option value="y">Yes</option><option selected value="w">With help</option><option value="n">Not yet</option>';
+                            }
+                            else if (Data.FirstTermGrade == "n") {
+                                var dffdf1 = '<option value="x">Not Assessed</option><option value="y">Yes</option><option value="w">With help</option><option selected value="n">Not yet</option>';
+                            }
+                            else if (Data.FirstTermGrade == "x" || Data.FirstTermGrade == "" || Data.FirstTermGrade == null) {
+                                var dffdf1 = '<option selected value="x">Not Assessed</option><option value="y">Yes</option><option value="w">With help</option><option value="n">Not yet</option>';
+                            }
+                        //}
+                        //else if (data.TId == 2) {
+                            if (Data.SecondTermGrade == "y") {
+                                var dffdf2 = '<option value="x">Not Assessed</option><option selected value="y">Yes</option><option value="w">With help</option><option value="n">Not yet</option>';
+                            }
+                            else if (Data.SecondTermGrade == "w") {
+                                var dffdf2 = '<option value="x">Not Assessed</option><option value="y">Yes</option><option selected value="w">With help</option><option value="n">Not yet</option>';
+                            }
+                            else if (Data.SecondTermGrade == "n") {
+                                var dffdf2 = '<option value="x">Not Assessed</option><option value="y">Yes</option><option value="w">With help</option><option selected value="n">Not yet</option>';
+                            }
+                            else if (Data.SecondTermGrade == "x" || Data.SecondTermGrade == "" || Data.SecondTermGrade == null) {
+                                var dffdf2 = '<option selected value="x">Not Assessed</option><option value="y">Yes</option><option value="w">With help</option><option value="n">Not yet</option>';
+                            }
+                        //}
+                        //else {
+                            if (Data.ThirdTermGrade == "y") {
+                                var dffdf3 = '<option value="x">Not Assessed</option><option selected value="y">Yes</option><option value="w">With help</option><option value="n">Not yet</option>';
+                            }
+                            else if (Data.ThirdTermGrade == "w") {
+                                var dffdf3 = '<option value="x">Not Assessed</option><option value="y">Yes</option><option selected value="w">With help</option><option value="n">Not yet</option>';
+                            }
+                            else if (Data.ThirdTermGrade == "n") {
+                                var dffdf3 = '<option value="x">Not Assessed</option><option value="y">Yes</option><option value="w">With help</option><option selected value="n">Not yet</option>';
+                            }
+                            else if (Data.ThirdTermGrade == "x" || Data.ThirdTermGrade == "" || Data.ThirdTermGrade == null) {
+                                var dffdf3 = '<option selected value="x">Not Assessed</option><option value="y">Yes</option><option value="w">With help</option><option value="n">Not yet</option>';
+                            }
+                        //}
+
+                        //.append($('<div>').addClass('icheckbox_flat-blue').css({ "position": "relative" }).attr("id", Data.Id).click(Singlecheak).data(Data)
+                        if (data.TId == 1) {
+                            var que1tr = $('<tr style=" border-bottom: 1px solid #f4f4f4;"><td>' + Data.Question + '</td><td class="form-group"><div class="col-md-4 eeniart001"><select id="1t' + Data.Id + '" onchange="goodert(this)" class="form-control">' + dffdf1 + '</select></div><div class="col-md-4 eeniart001"><select disabled id="2t' + Data.Id + '" onchange="goodert(this)" class="form-control">' + dffdf2 + '</select></div><div class="col-md-4 eeniart001"><select disabled id="3t' + Data.Id + '" onchange="goodert(this)" class="form-control">' + dffdf3 + '</select></div></td></tr>');
+                        }
+                        else if (data.TId == 2) {
+                            var que1tr = $('<tr style=" border-bottom: 1px solid #f4f4f4;"><td>' + Data.Question + '</td><td class="form-group"><div class="col-md-4 eeniart001"><select disabled id="1t' + Data.Id + '" onchange="goodert(this)" class="form-control">' + dffdf1 + '</select></div><div class="col-md-4 eeniart001"><select id="2t' + Data.Id + '" onchange="goodert(this)" class="form-control">' + dffdf2 + '</select></div><div class="col-md-4 eeniart001"><select disabled id="3t' + Data.Id + '" onchange="goodert(this)" class="form-control">' + dffdf3 + '</select></div></td></tr>');
+                        }
+                            else {
+                            var que1tr = $('<tr style=" border-bottom: 1px solid #f4f4f4;"><td>' + Data.Question + '</td><td class="form-group"><div class="col-md-4 eeniart001"><select disabled id="1t' + Data.Id + '" onchange="goodert(this)" class="form-control">' + dffdf1 + '</select></div><div class="col-md-4 eeniart001"><select disabled id="2t' + Data.Id + '" onchange="goodert(this)" class="form-control">' + dffdf2 + '</select></div><div class="col-md-4 eeniart001"><select id="3t' + Data.Id + '" onchange="goodert(this)" class="form-control">' + dffdf3 + '</select></div></td></tr>');
+                        }
+
+                        }
+                        else if (data.ClassId == 86 || data.ClassId == 87 || data.ClassId == 92 || data.ClassId == 93 || data.ClassId == 94) {
+
+
+                            if (data.TId == 1) {
+                                if (Data.FirstTermGrade == "b") {
+                                    var dffdf1 = '<option value="a">EXCELLENT</option><option selected value="b">GOOD</option><option value="c">SATISFACTORY</option><option value="d">CAUSE FOR CONCERN</option><option value="n.a">NOT APPLICABLE</option>';
+                                }
+                                else if (Data.FirstTermGrade == "a") {
+                                    var dffdf1 = '<option selected value="a">EXCELLENT</option><option value="b">GOOD</option><option value="c">SATISFACTORY</option><option value="d">CAUSE FOR CONCERN</option><option value="n.a">NOT APPLICABLE</option>';
+                                }
+                                else if (Data.FirstTermGrade == "c") {
+                                    var dffdf1 = '<option value="a">EXCELLENT</option><option value="b">GOOD</option><option selected value="c">SATISFACTORY</option><option value="d">CAUSE FOR CONCERN</option><option value="n.a">NOT APPLICABLE</option>';
+                                }
+                                else if (Data.FirstTermGrade == "n.a" || Data.FirstTermGrade == "" || Data.FirstTermGrade == null) {
+                                    var dffdf1 = '<option value="a">EXCELLENT</option><option value="b">GOOD</option><option value="c">SATISFACTORY</option><option value="d">CAUSE FOR CONCERN</option><option selected value="n.a">NOT APPLICABLE</option>';
+                                }
+                                else if (Data.FirstTermGrade == "d") {
+                                    var dffdf1 = '<option value="a">EXCELLENT</option><option value="b">GOOD</option><option value="c">SATISFACTORY</option><option selected value="d">CAUSE FOR CONCERN</option><option value="n.a">NOT APPLICABLE</option>';
+                                }
+                        
+                                var que1tr = $('<tr style=" border-bottom: 1px solid #f4f4f4;"><td>' + Data.Question + '</td><td class="form-group"><div class="col-md-6 col-md-offset-1 eeniart001"><select id="1t' + Data.Id + '" onchange="goodert(this)" class="form-control">' + dffdf1 + '</select></div></td></tr>');
+                            }
+                            else if (data.TId == 2) {
+                                if (Data.SecondTermGrade == "b") {
+                                    var dffdf1 = '<option value="a">EXCELLENT</option><option selected value="b">GOOD</option><option value="c">SATISFACTORY</option><option value="d">CAUSE FOR CONCERN</option><option value="n.a">NOT APPLICABLE</option>';
+                                }
+                                else if (Data.SecondTermGrade == "a") {
+                                    var dffdf1 = '<option selected value="a">EXCELLENT</option><option value="b">GOOD</option><option value="c">SATISFACTORY</option><option value="d">CAUSE FOR CONCERN</option><option value="n.a">NOT APPLICABLE</option>';
+                                }
+                                else if (Data.SecondTermGrade == "c") {
+                                    var dffdf1 = '<option value="a">EXCELLENT</option><option value="b">GOOD</option><option selected value="c">SATISFACTORY</option><option value="d">CAUSE FOR CONCERN</option><option value="n.a">NOT APPLICABLE</option>';
+                                }
+                                else if (Data.SecondTermGrade == "n.a" || Data.SecondTermGrade == "" || Data.SecondTermGrade == null) {
+                                    var dffdf1 = '<option value="a">EXCELLENT</option><option value="b">GOOD</option><option value="c">SATISFACTORY</option><option value="d">CAUSE FOR CONCERN</option><option selected value="n.a">NOT APPLICABLE</option>';
+                                }
+                                else if (Data.SecondTermGrade == "d") {
+                                    var dffdf1 = '<option value="a">EXCELLENT</option><option value="b">GOOD</option><option value="c">SATISFACTORY</option><option selected value="d">CAUSE FOR CONCERN</option><option value="n.a">NOT APPLICABLE</option>';
+                                }
+
+                                var que1tr = $('<tr style=" border-bottom: 1px solid #f4f4f4;"><td>' + Data.Question + '</td><td class="form-group"><div class="col-md-6 col-md-offset-1 eeniart001"><select id="1t' + Data.Id + '" onchange="goodert(this)" class="form-control">' + dffdf1 + '</select></div></td></tr>');
+                            }
+                            else {
+                                if (Data.ThirdTermGrade == "b") {
+                                    var dffdf1 = '<option value="a">EXCELLENT</option><option selected value="b">GOOD</option><option value="c">SATISFACTORY</option><option value="d">CAUSE FOR CONCERN</option><option value="n.a">NOT APPLICABLE</option>';
+                                }
+                                else if (Data.ThirdTermGrade == "a") {
+                                    var dffdf1 = '<option selected value="a">EXCELLENT</option><option value="b">GOOD</option><option value="c">SATISFACTORY</option><option value="d">CAUSE FOR CONCERN</option><option value="n.a">NOT APPLICABLE</option>';
+                                }
+                                else if (Data.ThirdTermGrade == "c") {
+                                    var dffdf1 = '<option value="a">EXCELLENT</option><option value="b">GOOD</option><option selected value="c">SATISFACTORY</option><option value="d">CAUSE FOR CONCERN</option><option value="n.a">NOT APPLICABLE</option>';
+                                }
+                                else if (Data.ThirdTermGrade == "n.a" || Data.ThirdTermGrade == "" || Data.ThirdTermGrade == null) {
+                                    var dffdf1 = '<option value="a">EXCELLENT</option><option value="b">GOOD</option><option value="c">SATISFACTORY</option><option value="d">CAUSE FOR CONCERN</option><option selected value="n.a">NOT APPLICABLE</option>';
+                                }
+                                else if (Data.ThirdTermGrade == "d") {
+                                    var dffdf1 = '<option value="a">EXCELLENT</option><option value="b">GOOD</option><option value="c">SATISFACTORY</option><option selected value="d">CAUSE FOR CONCERN</option><option value="n.a">NOT APPLICABLE</option>';
+                                }
+
+                                var que1tr = $('<tr style=" border-bottom: 1px solid #f4f4f4;"><td>' + Data.Question + '</td><td class="form-group"><div class="col-md-6 col-md-offset-1 eeniart001"><select id="1t' + Data.Id + '" onchange="goodert(this)" class="form-control">' + dffdf1 + '</select></div></td></tr>');
+                            }
+
+
+                        }
+
+                        var appendarea = $("#Evaluation_Question_Table").find("#eeniart" + sub.Id)[0];
+                        $("#sub" + sub.Id).append(que1tr)
+
+                    }
+                    
+
+                } else {
+
+                }
+
+
+
+                //$('#Evaluation_data').html(data);
+                //$('Comment_Evaluation').prop('disabled', false);
+            },
+            error: function (xhr) {
+                $('.eeniart0017').css("display", "none");
+                debugger;
+                alert(xhr.responseText);
+            }
+        });
+
+
+    }
+    function openquesrom(e) {
+        debugger;
+        var questionstr = $("#Evaluation_Question_Table").find("#eeniart" + e);
+        
+    }
+    
+    function goodert(e) {
+        debugger;
+       // alert(e.value);
+        var qid = e.id;
+        var grade = e.value;
+
+        $.ajax({
+            type: "POST",
+            url: "/TermAssessment/addgrade",
+            data: { Ques: qid, Grade: grade },
+            success: function (data) {
+                debugger;
+                if (data.status == "success") {
+
+
+
+                } else {
+
+                }
+
+
+            },
+            error: function (xhr) {
+                debugger;
+                alert(xhr.responseText);
+            }
+        });
+    }
+
+    function goodert1(e) {
+        debugger;
+        alert(e.value);
+        var qid = e.id;
+        var grade = e.value;
+
+        $.ajax({
+            type: "POST",
+            url: "/TermAssessment/addgrade1",
+            data: { Ques: qid, Grade: grade },
+            success: function (data) {
+                debugger;
+                if (data.status == "success") {
+                    
+
+
+                } else {
+
+                }
+
+
+            },
+            error: function (xhr) {
+                debugger;
+                alert(xhr.responseText);
+            }
+        });
+    }
+
+    function submit_Evaluation() {
+        var classID = $("#ClassID").val();
+        var studentId = $("#hidden").val();
+        $.get('@Url.Action("submit_Evaluation","TermAssessment")',
+           { StudentId: studentId, ClassID: classID }, function (data) {
+
+               $("#Evaluation_Question_Table").find("select,input,textarea").attr("disabled", true);
+               $('#Comment_Save').prop('disabled', true);
+
+           });
+
+
+        var id = $("#trId").val();
+        id = "#" + id;
+        $(id).find("td span").removeClass();
+        $(id).find("td span").addClass("glyphicon glyphicon-ok-circle text-success");
+        $(id).find("td span").css({ "color": "#3c763d" })
+
+    }
+
+</script>
+<label>@Html.ActionLink("Home", "Dashboard", "Account") > <a href="#" class="sidebar-toggle navigate" data-toggle="offcanvas" style="background-color:#F7F7F7 !important">User</a> > <b><a href="#">Class Assessment</a></b> </label>
+<h4>Class Assessment</h4>
+<div class="box box-primary">
+    <div class="box-body">
+        <div class="row">
+            <div class="form-horizontal">
+                @*<div class="col-md-8">*@
+
+                <div class="form-group">
+                    <lable class="col-md-2 col-lg-2 control-label"><b>Select Term</b></lable>
+                    <div class="col-md-6">
+                        @{
+                            List<SelectListItem> listItems = new List<SelectListItem>();
+                            listItems.Add(new SelectListItem
+                            {
+                                Text = "First Term",
+                                Value = "12",
+                                Selected = true
+                            });
+                            listItems.Add(new SelectListItem
+                            {
+                                Text = "Second Term",
+                                Value = "13",
+                            });
+                            listItems.Add(new SelectListItem
+                            {
+                                Text = "Third Term",
+                                Value = "14",
+                            });
+                            listItems.Add(new SelectListItem
+                            {
+                                Text = "Final Term",
+                                Value = "16",
+                            });
+                        }
+
+                        @Html.DropDownList("TermID", null, htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <lable class="col-md-2 col-lg-2 control-label"><b>Select Class</b></lable>
+                    <div class="col-md-6">
+                        @Html.DropDownList("ClassID", null, htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*</div>*@
+        <div class="row" id="studentseeniart">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Evaluation</th>
+                        <th>Status<input id="hidden" value="empty" type="hidden" /></th>
+                    </tr>
+                </thead>
+                <tbody id="StudentTable"></tbody>
+            </table>
+        </div>
+
+        <div class="row" id="evaliationformeeniart" style="display:none">
+            @*<i class="fa fa-arrow-left" style="font-size:30px" aria-hidden="true" onclick="studentseeni()"></i>*@
+            <div class="col-md-12">
+                <div class="box box-primary">
+
+                    <div class="box-body">
+                        <span id="StudentName" class="text-success evaluate eeniart002"></span>
+                        <input type="hidden" id="trId" />
+                        <div id="Evaluation_data">
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-8">
+                        <br />
+                        <label class="control-label col-md-2">Teacher Comment</label>
+                        <div class="col-md-10">
+                            <input onblur="Tcomment()"  class="form-control" type="text" id="TC" />
+                        </div>
+                        <br /><br /><br />
+                    </div>                                          
+                       <div class="col-md-8">
+                           <label class="control-label col-md-2">Parent Comment</label>
+                          <div class="col-md-10">
+                              <input class="form-control" type="text" id="PC" readonly/>
+                          </div>
+                           <br /><br /><br />
+                       </div>
+                       <div class="col-md-8">
+                           <label class="control-label col-md-2">Principal Comment</label>
+                         <div class="col-md-10">
+                             <input class="form-control" type="text" id="PrC" readonly/>
+                         </div>
+                           <br /><br /><br />
+                       </div>                   
+                    <div class="box-footer">
+                        <button type="button" onclick="studentseeni()" id="saceassess" class="col-md-3 col-md-offset-4 btn btn-primary">Done With Assessment</button>
+                    </div>
+                    <div id="partial">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+      
+
+        <div class="row">
+
+        </div>
+    </div>
+</div>
+<!----------------------------------------------------------------------------------->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                After submitting you won't be able to change data
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="submit_Evaluation()" data-dismiss="modal">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---------------------------------------------------------------------------------------------->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Complete</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Term of the latest session is not started yet
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
