@@ -1,5 +1,4 @@
-﻿@using Microsoft.AspNet.Identity
-@using System.Security.Claims;
+﻿@using System.Security.Claims;
 @{
 //   var cp = (ClaimsPrincipal)User;
 
@@ -61,7 +60,6 @@
 
 </script>
 <body>
-
     @if (Request.IsAuthenticated)
     {
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
@@ -130,14 +128,14 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="~/AdminLTE/dist/img/user.svg" style="width:20px !important; height:20px !important; margin-top: 4px !important; margin-right: 2px !important" class="user-image" alt="User Image">
-                                <span class="hidden-xs" style="color:white !important">@User.Identity.GetUserName()</span>
+                                @*<span class="hidden-xs" style="color:white !important">@User.Identity.GetUserName()</span>*@
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="user-header">
                                     <img src="~/AdminLTE/dist/img/user.svg" class="img-circle" alt="User Image">
                                     <p>
                                         @{ var user = (System.Security.Claims.ClaimsIdentity)User.Identity; }
-                                        <small>@user.FindFirstValue("CustomName")</small>
+                                        @*<small>@user.FindFirstValue("CustomName")</small>*@
                                     </p>
                                 </li>
                                 @*

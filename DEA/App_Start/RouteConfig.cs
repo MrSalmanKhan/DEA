@@ -18,12 +18,6 @@ namespace DEA
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional }
             );
-
-           routes.MapRoute(
-                name: "AspNetAssessment_Question/Create",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "AspNetAssessment_Question", action = "Create", id = UrlParameter.Optional }
-            );
         }
     }
 }

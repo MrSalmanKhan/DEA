@@ -1,5 +1,4 @@
-﻿@using DEA.Models
-@model LoginViewModel
+﻿
 @{
     ViewBag.Title = "Log in";
 }
@@ -25,8 +24,8 @@
 
 
 <html>
-
 <body class="hold-transition login-page">
+    
     <div class="login-box">
         <div class="login-logo">
             <a href="@Url.Action("DashboardV1", "Home")">Sign In to <strong>SEA</strong></a>
@@ -39,14 +38,14 @@
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group has-feedback">
                     <label style="font-weight:normal; font-size:15px;">Username:</label>
-                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "Username" , Style= "border-radius:3px;" })
-                    @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                    @*@Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "Username" , Style= "border-radius:3px;" })
+                    @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })*@
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
                     <label style="font-weight:normal; font-size:15px;">Password:</label>
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", type = "password", placeholder = "Password", Style = "border-radius:3px;" })
-                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    @*@Html.PasswordFor(m => m.Password, new { @class = "form-control", type = "password", placeholder = "Password", Style = "border-radius:3px;" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })*@
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
                 <div class="row">                  

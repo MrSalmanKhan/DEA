@@ -4,27 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace DEA
+namespace DEA.Controllers
 {
     public class HomeController : Controller
     {
-        [AllowAnonymous]
+        // GET: Home
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }

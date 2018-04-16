@@ -1,0 +1,1527 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ActivityLog">
+          <Key>
+            <PropertyRef Name="LogID" />
+          </Key>
+          <Property Name="LogID" Type="int" Nullable="false" />
+          <Property Name="Operation" Type="varchar(max)" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="UserID" Type="int" />
+        </EntityType>
+        <EntityType Name="Announcement">
+          <Key>
+            <PropertyRef Name="AnnouncementID" />
+          </Key>
+          <Property Name="AnnouncementID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="32" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="Date" Type="date" />
+        </EntityType>
+        <EntityType Name="Attendance">
+          <Key>
+            <PropertyRef Name="AttandenceID" />
+          </Key>
+          <Property Name="AttandenceID" Type="int" Nullable="false" />
+          <Property Name="SubjectID" Type="int" />
+          <Property Name="Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="ClassID" />
+          </Key>
+          <Property Name="ClassID" Type="int" Nullable="false" />
+          <Property Name="Class" Type="varchar" MaxLength="32" />
+          <Property Name="Section" Type="varchar" MaxLength="32" />
+          <Property Name="ClassName" Type="varchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Diary">
+          <Key>
+            <PropertyRef Name="DiaryID" />
+          </Key>
+          <Property Name="DiaryID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" />
+          <Property Name="ClassID" Type="int" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="DateAvailable" Type="datetime" />
+          <Property Name="JoiningDate" Type="datetime" />
+          <Property Name="Birthdate" Type="datetime" />
+          <Property Name="Nationality" Type="varchar" MaxLength="32" />
+          <Property Name="Religion" Type="varchar" MaxLength="32" />
+          <Property Name="Gender" Type="varchar" MaxLength="16" />
+          <Property Name="PostalAddress" Type="varchar" MaxLength="256" />
+          <Property Name="Email" Type="varchar" MaxLength="128" />
+          <Property Name="MobileNumber" Type="varchar" MaxLength="32" />
+          <Property Name="Landline" Type="varchar" MaxLength="32" />
+          <Property Name="SpouseName" Type="varchar" MaxLength="64" />
+          <Property Name="SpouseDegree" Type="varchar" MaxLength="64" />
+          <Property Name="SpouseOccupation" Type="varchar" MaxLength="64" />
+          <Property Name="SpouseBusinessAddress" Type="varchar" MaxLength="256" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="RoleID" Type="int" />
+        </EntityType>
+        <EntityType Name="EmployeeAttandence">
+          <Key>
+            <PropertyRef Name="EAttandenceID" />
+          </Key>
+          <Property Name="EAttandenceID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" />
+          <Property Name="Status" Type="varchar" MaxLength="16" />
+          <Property Name="Reason" Type="varchar(max)" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="HomeWork">
+          <Key>
+            <PropertyRef Name="HWID" />
+          </Key>
+          <Property Name="HWID" Type="int" Nullable="false" />
+          <Property Name="SubjectID" Type="int" />
+          <Property Name="HWDetail" Type="varchar" MaxLength="256" />
+          <Property Name="DiaryID" Type="int" />
+        </EntityType>
+        <EntityType Name="LoginTime">
+          <Key>
+            <PropertyRef Name="LTID" />
+          </Key>
+          <Property Name="LTID" Type="int" Nullable="false" />
+          <Property Name="Time" Type="datetime" />
+          <Property Name="UserID" Type="int" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="MessageID" />
+          </Key>
+          <Property Name="MessageID" Type="int" Nullable="false" />
+          <Property Name="Subject" Type="varchar" MaxLength="256" />
+          <Property Name="Body" Type="varchar(max)" />
+          <Property Name="TIme" Type="datetime" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="IsText" Type="bit" />
+          <Property Name="IsMail" Type="bit" />
+        </EntityType>
+        <EntityType Name="MessageReceiver">
+          <Key>
+            <PropertyRef Name="ReceiverID" />
+          </Key>
+          <Property Name="ReceiverID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="MessageID" Type="int" />
+        </EntityType>
+        <EntityType Name="Parent">
+          <Key>
+            <PropertyRef Name="ParentID" />
+          </Key>
+          <Property Name="ParentID" Type="int" Nullable="false" />
+          <Property Name="FatherName" Type="varchar" MaxLength="64" />
+          <Property Name="FatherEmail" Type="varchar" MaxLength="32" />
+          <Property Name="FatherCell" Type="varchar" MaxLength="32" />
+          <Property Name="FatherOccupation" Type="varchar" MaxLength="64" />
+          <Property Name="MotherName" Type="varchar" MaxLength="32" />
+          <Property Name="MotherEmail" Type="varchar" MaxLength="32" />
+          <Property Name="MotherCell" Type="varchar" MaxLength="32" />
+          <Property Name="MotherOccupation" Type="varchar" MaxLength="64" />
+          <Property Name="UserID" Type="int" />
+        </EntityType>
+        <EntityType Name="ParentTeacherMeeting">
+          <Key>
+            <PropertyRef Name="PTMID" />
+          </Key>
+          <Property Name="PTMID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="32" />
+          <Property Name="Description" Type="varchar" MaxLength="32" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Time" Type="datetime2" Precision="7" />
+          <Property Name="Status" Type="varchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="TItle" Type="varchar" MaxLength="32" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="PublishDate" Type="date" />
+          <Property Name="DueDate" Type="date" />
+          <Property Name="SubjectID" Type="int" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="int" Nullable="false" />
+          <Property Name="RoleName" Type="varchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Session">
+          <Key>
+            <PropertyRef Name="SessionID" />
+          </Key>
+          <Property Name="SessionID" Type="int" Nullable="false" />
+          <Property Name="SessionName" Type="varchar" MaxLength="32" />
+          <Property Name="SessionStartDate" Type="datetime" />
+          <Property Name="SessionEndDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="ClassId" Type="int" />
+          <Property Name="DOB" Type="datetime" />
+          <Property Name="Nationality" Type="varchar" MaxLength="32" />
+          <Property Name="Religion" Type="varchar" MaxLength="32" />
+          <Property Name="Gender" Type="varchar" MaxLength="32" />
+          <Property Name="ParentID" Type="int" />
+        </EntityType>
+        <EntityType Name="StudentAttandence">
+          <Key>
+            <PropertyRef Name="SAttandenceID" />
+          </Key>
+          <Property Name="SAttandenceID" Type="int" Nullable="false" />
+          <Property Name="AttandenceID" Type="int" />
+          <Property Name="StudentID" Type="int" />
+          <Property Name="Status" Type="varchar" MaxLength="16" />
+          <Property Name="Reason" Type="varchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="Subject">
+          <Key>
+            <PropertyRef Name="SubjectID" />
+          </Key>
+          <Property Name="SubjectID" Type="int" Nullable="false" />
+          <Property Name="SubjectName" Type="varchar" MaxLength="32" />
+          <Property Name="ClassID" Type="int" />
+          <Property Name="TeacherID" Type="int" />
+        </EntityType>
+        <EntityType Name="Term">
+          <Key>
+            <PropertyRef Name="TermID" />
+          </Key>
+          <Property Name="TermID" Type="int" Nullable="false" />
+          <Property Name="TermName" Type="varchar" MaxLength="32" />
+          <Property Name="TermStartDate" Type="date" />
+          <Property Name="TermEndDate" Type="date" />
+          <Property Name="SessionID" Type="int" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="32" />
+          <Property Name="Role" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="Image" Type="varchar" MaxLength="128" />
+          <Property Name="TimeStamp" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_ActivityLog_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="ActivityLog" Type="Self.ActivityLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ActivityLog">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attendance_Subject">
+          <End Role="Subject" Type="Self.Subject" Multiplicity="0..1" />
+          <End Role="Attendance" Type="Self.Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subject">
+              <PropertyRef Name="SubjectID" />
+            </Principal>
+            <Dependent Role="Attendance">
+              <PropertyRef Name="SubjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Diary_Class">
+          <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
+          <End Role="Diary" Type="Self.Diary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassID" />
+            </Principal>
+            <Dependent Role="Diary">
+              <PropertyRef Name="ClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_User">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeAttandence_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="EmployeeAttandence" Type="Self.EmployeeAttandence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="EmployeeAttandence">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HomeWork_Diary">
+          <End Role="Diary" Type="Self.Diary" Multiplicity="0..1" />
+          <End Role="HomeWork" Type="Self.HomeWork" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Diary">
+              <PropertyRef Name="DiaryID" />
+            </Principal>
+            <Dependent Role="HomeWork">
+              <PropertyRef Name="DiaryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HomeWork_Subject">
+          <End Role="Subject" Type="Self.Subject" Multiplicity="0..1" />
+          <End Role="HomeWork" Type="Self.HomeWork" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subject">
+              <PropertyRef Name="SubjectID" />
+            </Principal>
+            <Dependent Role="HomeWork">
+              <PropertyRef Name="SubjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LoginTime_User">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="LoginTime" Type="Self.LoginTime" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="LoginTime">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_User">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Message" Type="Self.Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Message">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MessageReceiver_Message">
+          <End Role="Message" Type="Self.Message" Multiplicity="0..1" />
+          <End Role="MessageReceiver" Type="Self.MessageReceiver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="MessageID" />
+            </Principal>
+            <Dependent Role="MessageReceiver">
+              <PropertyRef Name="MessageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MessageReceiver_User">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="MessageReceiver" Type="Self.MessageReceiver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="MessageReceiver">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Parent_User">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Parent" Type="Self.Parent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Parent">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Project_Subject">
+          <End Role="Subject" Type="Self.Subject" Multiplicity="0..1" />
+          <End Role="Project" Type="Self.Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subject">
+              <PropertyRef Name="SubjectID" />
+            </Principal>
+            <Dependent Role="Project">
+              <PropertyRef Name="SubjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Class">
+          <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassID" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="ClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Parent">
+          <End Role="Parent" Type="Self.Parent" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parent">
+              <PropertyRef Name="ParentID" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="ParentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_User">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentAttandence_Attendance">
+          <End Role="Attendance" Type="Self.Attendance" Multiplicity="0..1" />
+          <End Role="StudentAttandence" Type="Self.StudentAttandence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Attendance">
+              <PropertyRef Name="AttandenceID" />
+            </Principal>
+            <Dependent Role="StudentAttandence">
+              <PropertyRef Name="AttandenceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentAttandence_Student">
+          <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+          <End Role="StudentAttandence" Type="Self.StudentAttandence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="StudentAttandence">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subject_Class">
+          <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
+          <End Role="Subject" Type="Self.Subject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassID" />
+            </Principal>
+            <Dependent Role="Subject">
+              <PropertyRef Name="ClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subject_Teacher">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Subject" Type="Self.Subject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Subject">
+              <PropertyRef Name="TeacherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Term_Session">
+          <End Role="Session" Type="Self.Session" Multiplicity="0..1" />
+          <End Role="Term" Type="Self.Term" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Session">
+              <PropertyRef Name="SessionID" />
+            </Principal>
+            <Dependent Role="Term">
+              <PropertyRef Name="SessionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="StoreContainer">
+          <EntitySet Name="ActivityLog" EntityType="Self.ActivityLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Announcement" EntityType="Self.Announcement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Attendance" EntityType="Self.Attendance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Class" EntityType="Self.Class" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Diary" EntityType="Self.Diary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeAttandence" EntityType="Self.EmployeeAttandence" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HomeWork" EntityType="Self.HomeWork" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoginTime" EntityType="Self.LoginTime" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Message" EntityType="Self.Message" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MessageReceiver" EntityType="Self.MessageReceiver" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Parent" EntityType="Self.Parent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ParentTeacherMeeting" EntityType="Self.ParentTeacherMeeting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Session" EntityType="Self.Session" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentAttandence" EntityType="Self.StudentAttandence" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subject" EntityType="Self.Subject" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Term" EntityType="Self.Term" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ActivityLog_Users" Association="Self.FK_ActivityLog_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ActivityLog" EntitySet="ActivityLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attendance_Subject" Association="Self.FK_Attendance_Subject">
+            <End Role="Subject" EntitySet="Subject" />
+            <End Role="Attendance" EntitySet="Attendance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Diary_Class" Association="Self.FK_Diary_Class">
+            <End Role="Class" EntitySet="Class" />
+            <End Role="Diary" EntitySet="Diary" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Role" Association="Self.FK_Employee_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_User" Association="Self.FK_Employee_User">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeAttandence_Employee" Association="Self.FK_EmployeeAttandence_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="EmployeeAttandence" EntitySet="EmployeeAttandence" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HomeWork_Diary" Association="Self.FK_HomeWork_Diary">
+            <End Role="Diary" EntitySet="Diary" />
+            <End Role="HomeWork" EntitySet="HomeWork" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HomeWork_Subject" Association="Self.FK_HomeWork_Subject">
+            <End Role="Subject" EntitySet="Subject" />
+            <End Role="HomeWork" EntitySet="HomeWork" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LoginTime_User" Association="Self.FK_LoginTime_User">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="LoginTime" EntitySet="LoginTime" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_User" Association="Self.FK_Message_User">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Message" EntitySet="Message" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MessageReceiver_Message" Association="Self.FK_MessageReceiver_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="MessageReceiver" EntitySet="MessageReceiver" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MessageReceiver_User" Association="Self.FK_MessageReceiver_User">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="MessageReceiver" EntitySet="MessageReceiver" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Parent_User" Association="Self.FK_Parent_User">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Parent" EntitySet="Parent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Project_Subject" Association="Self.FK_Project_Subject">
+            <End Role="Subject" EntitySet="Subject" />
+            <End Role="Project" EntitySet="Project" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Class" Association="Self.FK_Student_Class">
+            <End Role="Class" EntitySet="Class" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Parent" Association="Self.FK_Student_Parent">
+            <End Role="Parent" EntitySet="Parent" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_User" Association="Self.FK_Student_User">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentAttandence_Attendance" Association="Self.FK_StudentAttandence_Attendance">
+            <End Role="Attendance" EntitySet="Attendance" />
+            <End Role="StudentAttandence" EntitySet="StudentAttandence" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentAttandence_Student" Association="Self.FK_StudentAttandence_Student">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="StudentAttandence" EntitySet="StudentAttandence" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subject_Class" Association="Self.FK_Subject_Class">
+            <End Role="Class" EntitySet="Class" />
+            <End Role="Subject" EntitySet="Subject" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subject_Teacher" Association="Self.FK_Subject_Teacher">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Subject" EntitySet="Subject" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Term_Session" Association="Self.FK_Term_Session">
+            <End Role="Session" EntitySet="Session" />
+            <End Role="Term" EntitySet="Term" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DEA_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DEA_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ActivityLogs" EntityType="DEA_DBModel.ActivityLog" />
+          <EntitySet Name="Announcements" EntityType="DEA_DBModel.Announcement" />
+          <EntitySet Name="Attendances" EntityType="DEA_DBModel.Attendance" />
+          <EntitySet Name="Classes" EntityType="DEA_DBModel.Class" />
+          <EntitySet Name="Diaries" EntityType="DEA_DBModel.Diary" />
+          <EntitySet Name="Employees" EntityType="DEA_DBModel.Employee" />
+          <EntitySet Name="EmployeeAttandences" EntityType="DEA_DBModel.EmployeeAttandence" />
+          <EntitySet Name="HomeWork" EntityType="DEA_DBModel.HomeWork" />
+          <EntitySet Name="LoginTimes" EntityType="DEA_DBModel.LoginTime" />
+          <EntitySet Name="Messages" EntityType="DEA_DBModel.Message" />
+          <EntitySet Name="MessageReceivers" EntityType="DEA_DBModel.MessageReceiver" />
+          <EntitySet Name="Parents" EntityType="DEA_DBModel.Parent" />
+          <EntitySet Name="ParentTeacherMeetings" EntityType="DEA_DBModel.ParentTeacherMeeting" />
+          <EntitySet Name="Projects" EntityType="DEA_DBModel.Project" />
+          <EntitySet Name="Roles" EntityType="DEA_DBModel.Role" />
+          <EntitySet Name="Sessions" EntityType="DEA_DBModel.Session" />
+          <EntitySet Name="Students" EntityType="DEA_DBModel.Student" />
+          <EntitySet Name="StudentAttandences" EntityType="DEA_DBModel.StudentAttandence" />
+          <EntitySet Name="Subjects" EntityType="DEA_DBModel.Subject" />
+          <EntitySet Name="Terms" EntityType="DEA_DBModel.Term" />
+          <EntitySet Name="Users" EntityType="DEA_DBModel.User" />
+          <AssociationSet Name="FK_ActivityLog_Users" Association="DEA_DBModel.FK_ActivityLog_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="ActivityLog" EntitySet="ActivityLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attendance_Subject" Association="DEA_DBModel.FK_Attendance_Subject">
+            <End Role="Subject" EntitySet="Subjects" />
+            <End Role="Attendance" EntitySet="Attendances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentAttandence_Attendance" Association="DEA_DBModel.FK_StudentAttandence_Attendance">
+            <End Role="Attendance" EntitySet="Attendances" />
+            <End Role="StudentAttandence" EntitySet="StudentAttandences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Diary_Class" Association="DEA_DBModel.FK_Diary_Class">
+            <End Role="Class" EntitySet="Classes" />
+            <End Role="Diary" EntitySet="Diaries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Class" Association="DEA_DBModel.FK_Student_Class">
+            <End Role="Class" EntitySet="Classes" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subject_Class" Association="DEA_DBModel.FK_Subject_Class">
+            <End Role="Class" EntitySet="Classes" />
+            <End Role="Subject" EntitySet="Subjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HomeWork_Diary" Association="DEA_DBModel.FK_HomeWork_Diary">
+            <End Role="Diary" EntitySet="Diaries" />
+            <End Role="HomeWork" EntitySet="HomeWork" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Role" Association="DEA_DBModel.FK_Employee_Role">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_User" Association="DEA_DBModel.FK_Employee_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeAttandence_Employee" Association="DEA_DBModel.FK_EmployeeAttandence_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="EmployeeAttandence" EntitySet="EmployeeAttandences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subject_Teacher" Association="DEA_DBModel.FK_Subject_Teacher">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Subject" EntitySet="Subjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HomeWork_Subject" Association="DEA_DBModel.FK_HomeWork_Subject">
+            <End Role="Subject" EntitySet="Subjects" />
+            <End Role="HomeWork" EntitySet="HomeWork" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LoginTime_User" Association="DEA_DBModel.FK_LoginTime_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="LoginTime" EntitySet="LoginTimes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_User" Association="DEA_DBModel.FK_Message_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Message" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MessageReceiver_Message" Association="DEA_DBModel.FK_MessageReceiver_Message">
+            <End Role="Message" EntitySet="Messages" />
+            <End Role="MessageReceiver" EntitySet="MessageReceivers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MessageReceiver_User" Association="DEA_DBModel.FK_MessageReceiver_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="MessageReceiver" EntitySet="MessageReceivers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Parent_User" Association="DEA_DBModel.FK_Parent_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Parent" EntitySet="Parents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Parent" Association="DEA_DBModel.FK_Student_Parent">
+            <End Role="Parent" EntitySet="Parents" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Project_Subject" Association="DEA_DBModel.FK_Project_Subject">
+            <End Role="Subject" EntitySet="Subjects" />
+            <End Role="Project" EntitySet="Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Term_Session" Association="DEA_DBModel.FK_Term_Session">
+            <End Role="Session" EntitySet="Sessions" />
+            <End Role="Term" EntitySet="Terms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_User" Association="DEA_DBModel.FK_Student_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentAttandence_Student" Association="DEA_DBModel.FK_StudentAttandence_Student">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="StudentAttandence" EntitySet="StudentAttandences" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ActivityLog">
+          <Key>
+            <PropertyRef Name="LogID" />
+          </Key>
+          <Property Name="LogID" Type="Int32" Nullable="false" />
+          <Property Name="Operation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="UserID" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="DEA_DBModel.FK_ActivityLog_Users" FromRole="ActivityLog" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Announcement">
+          <Key>
+            <PropertyRef Name="AnnouncementID" />
+          </Key>
+          <Property Name="AnnouncementID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Attendance">
+          <Key>
+            <PropertyRef Name="AttandenceID" />
+          </Key>
+          <Property Name="AttandenceID" Type="Int32" Nullable="false" />
+          <Property Name="SubjectID" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Subject" Relationship="DEA_DBModel.FK_Attendance_Subject" FromRole="Attendance" ToRole="Subject" />
+          <NavigationProperty Name="StudentAttandences" Relationship="DEA_DBModel.FK_StudentAttandence_Attendance" FromRole="Attendance" ToRole="StudentAttandence" />
+        </EntityType>
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="ClassID" />
+          </Key>
+          <Property Name="ClassID" Type="Int32" Nullable="false" />
+          <Property Name="Class1" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Section" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="ClassName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Diaries" Relationship="DEA_DBModel.FK_Diary_Class" FromRole="Class" ToRole="Diary" />
+          <NavigationProperty Name="Students" Relationship="DEA_DBModel.FK_Student_Class" FromRole="Class" ToRole="Student" />
+          <NavigationProperty Name="Subjects" Relationship="DEA_DBModel.FK_Subject_Class" FromRole="Class" ToRole="Subject" />
+        </EntityType>
+        <EntityType Name="Diary">
+          <Key>
+            <PropertyRef Name="DiaryID" />
+          </Key>
+          <Property Name="DiaryID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="ClassID" Type="Int32" />
+          <NavigationProperty Name="Class" Relationship="DEA_DBModel.FK_Diary_Class" FromRole="Diary" ToRole="Class" />
+          <NavigationProperty Name="HomeWork" Relationship="DEA_DBModel.FK_HomeWork_Diary" FromRole="Diary" ToRole="HomeWork" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="DateAvailable" Type="DateTime" Precision="3" />
+          <Property Name="JoiningDate" Type="DateTime" Precision="3" />
+          <Property Name="Birthdate" Type="DateTime" Precision="3" />
+          <Property Name="Nationality" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Religion" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="PostalAddress" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNumber" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Landline" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="SpouseName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="SpouseDegree" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="SpouseOccupation" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="SpouseBusinessAddress" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="RoleID" Type="Int32" />
+          <NavigationProperty Name="Role" Relationship="DEA_DBModel.FK_Employee_Role" FromRole="Employee" ToRole="Role" />
+          <NavigationProperty Name="User" Relationship="DEA_DBModel.FK_Employee_User" FromRole="Employee" ToRole="User" />
+          <NavigationProperty Name="EmployeeAttandences" Relationship="DEA_DBModel.FK_EmployeeAttandence_Employee" FromRole="Employee" ToRole="EmployeeAttandence" />
+          <NavigationProperty Name="Subjects" Relationship="DEA_DBModel.FK_Subject_Teacher" FromRole="Employee" ToRole="Subject" />
+        </EntityType>
+        <EntityType Name="EmployeeAttandence">
+          <Key>
+            <PropertyRef Name="EAttandenceID" />
+          </Key>
+          <Property Name="EAttandenceID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeID" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Time" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Employee" Relationship="DEA_DBModel.FK_EmployeeAttandence_Employee" FromRole="EmployeeAttandence" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="HomeWork">
+          <Key>
+            <PropertyRef Name="HWID" />
+          </Key>
+          <Property Name="HWID" Type="Int32" Nullable="false" />
+          <Property Name="SubjectID" Type="Int32" />
+          <Property Name="HWDetail" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="DiaryID" Type="Int32" />
+          <NavigationProperty Name="Diary" Relationship="DEA_DBModel.FK_HomeWork_Diary" FromRole="HomeWork" ToRole="Diary" />
+          <NavigationProperty Name="Subject" Relationship="DEA_DBModel.FK_HomeWork_Subject" FromRole="HomeWork" ToRole="Subject" />
+        </EntityType>
+        <EntityType Name="LoginTime">
+          <Key>
+            <PropertyRef Name="LTID" />
+          </Key>
+          <Property Name="LTID" Type="Int32" Nullable="false" />
+          <Property Name="Time" Type="DateTime" Precision="3" />
+          <Property Name="UserID" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="DEA_DBModel.FK_LoginTime_User" FromRole="LoginTime" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="MessageID" />
+          </Key>
+          <Property Name="MessageID" Type="Int32" Nullable="false" />
+          <Property Name="Subject" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TIme" Type="DateTime" Precision="3" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="IsText" Type="Boolean" />
+          <Property Name="IsMail" Type="Boolean" />
+          <NavigationProperty Name="User" Relationship="DEA_DBModel.FK_Message_User" FromRole="Message" ToRole="User" />
+          <NavigationProperty Name="MessageReceivers" Relationship="DEA_DBModel.FK_MessageReceiver_Message" FromRole="Message" ToRole="MessageReceiver" />
+        </EntityType>
+        <EntityType Name="MessageReceiver">
+          <Key>
+            <PropertyRef Name="ReceiverID" />
+          </Key>
+          <Property Name="ReceiverID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="MessageID" Type="Int32" />
+          <NavigationProperty Name="Message" Relationship="DEA_DBModel.FK_MessageReceiver_Message" FromRole="MessageReceiver" ToRole="Message" />
+          <NavigationProperty Name="User" Relationship="DEA_DBModel.FK_MessageReceiver_User" FromRole="MessageReceiver" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Parent">
+          <Key>
+            <PropertyRef Name="ParentID" />
+          </Key>
+          <Property Name="ParentID" Type="Int32" Nullable="false" />
+          <Property Name="FatherName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="FatherEmail" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="FatherCell" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="FatherOccupation" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="MotherName" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="MotherEmail" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="MotherCell" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="MotherOccupation" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="UserID" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="DEA_DBModel.FK_Parent_User" FromRole="Parent" ToRole="User" />
+          <NavigationProperty Name="Students" Relationship="DEA_DBModel.FK_Student_Parent" FromRole="Parent" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="ParentTeacherMeeting">
+          <Key>
+            <PropertyRef Name="PTMID" />
+          </Key>
+          <Property Name="PTMID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Time" Type="DateTime" Precision="7" />
+          <Property Name="Status" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <Property Name="TItle" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PublishDate" Type="DateTime" Precision="0" />
+          <Property Name="DueDate" Type="DateTime" Precision="0" />
+          <Property Name="SubjectID" Type="Int32" />
+          <NavigationProperty Name="Subject" Relationship="DEA_DBModel.FK_Project_Subject" FromRole="Project" ToRole="Subject" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Int32" Nullable="false" />
+          <Property Name="RoleName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employees" Relationship="DEA_DBModel.FK_Employee_Role" FromRole="Role" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Session">
+          <Key>
+            <PropertyRef Name="SessionID" />
+          </Key>
+          <Property Name="SessionID" Type="Int32" Nullable="false" />
+          <Property Name="SessionName" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="SessionStartDate" Type="DateTime" Precision="3" />
+          <Property Name="SessionEndDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Terms" Relationship="DEA_DBModel.FK_Term_Session" FromRole="Session" ToRole="Term" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="ClassId" Type="Int32" />
+          <Property Name="DOB" Type="DateTime" Precision="3" />
+          <Property Name="Nationality" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Religion" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="ParentID" Type="Int32" />
+          <NavigationProperty Name="Class" Relationship="DEA_DBModel.FK_Student_Class" FromRole="Student" ToRole="Class" />
+          <NavigationProperty Name="Parent" Relationship="DEA_DBModel.FK_Student_Parent" FromRole="Student" ToRole="Parent" />
+          <NavigationProperty Name="User" Relationship="DEA_DBModel.FK_Student_User" FromRole="Student" ToRole="User" />
+          <NavigationProperty Name="StudentAttandences" Relationship="DEA_DBModel.FK_StudentAttandence_Student" FromRole="Student" ToRole="StudentAttandence" />
+        </EntityType>
+        <EntityType Name="StudentAttandence">
+          <Key>
+            <PropertyRef Name="SAttandenceID" />
+          </Key>
+          <Property Name="SAttandenceID" Type="Int32" Nullable="false" />
+          <Property Name="AttandenceID" Type="Int32" />
+          <Property Name="StudentID" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Reason" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Attendance" Relationship="DEA_DBModel.FK_StudentAttandence_Attendance" FromRole="StudentAttandence" ToRole="Attendance" />
+          <NavigationProperty Name="Student" Relationship="DEA_DBModel.FK_StudentAttandence_Student" FromRole="StudentAttandence" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="Subject">
+          <Key>
+            <PropertyRef Name="SubjectID" />
+          </Key>
+          <Property Name="SubjectID" Type="Int32" Nullable="false" />
+          <Property Name="SubjectName" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="ClassID" Type="Int32" />
+          <Property Name="TeacherID" Type="Int32" />
+          <NavigationProperty Name="Attendances" Relationship="DEA_DBModel.FK_Attendance_Subject" FromRole="Subject" ToRole="Attendance" />
+          <NavigationProperty Name="Class" Relationship="DEA_DBModel.FK_Subject_Class" FromRole="Subject" ToRole="Class" />
+          <NavigationProperty Name="Employee" Relationship="DEA_DBModel.FK_Subject_Teacher" FromRole="Subject" ToRole="Employee" />
+          <NavigationProperty Name="HomeWork" Relationship="DEA_DBModel.FK_HomeWork_Subject" FromRole="Subject" ToRole="HomeWork" />
+          <NavigationProperty Name="Projects" Relationship="DEA_DBModel.FK_Project_Subject" FromRole="Subject" ToRole="Project" />
+        </EntityType>
+        <EntityType Name="Term">
+          <Key>
+            <PropertyRef Name="TermID" />
+          </Key>
+          <Property Name="TermID" Type="Int32" Nullable="false" />
+          <Property Name="TermName" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="TermStartDate" Type="DateTime" Precision="0" />
+          <Property Name="TermEndDate" Type="DateTime" Precision="0" />
+          <Property Name="SessionID" Type="Int32" />
+          <Property Name="Status" Type="Boolean" />
+          <NavigationProperty Name="Session" Relationship="DEA_DBModel.FK_Term_Session" FromRole="Term" ToRole="Session" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Role" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="Image" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="TimeStamp" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ActivityLogs" Relationship="DEA_DBModel.FK_ActivityLog_Users" FromRole="User" ToRole="ActivityLog" />
+          <NavigationProperty Name="Employees" Relationship="DEA_DBModel.FK_Employee_User" FromRole="User" ToRole="Employee" />
+          <NavigationProperty Name="LoginTimes" Relationship="DEA_DBModel.FK_LoginTime_User" FromRole="User" ToRole="LoginTime" />
+          <NavigationProperty Name="Messages" Relationship="DEA_DBModel.FK_Message_User" FromRole="User" ToRole="Message" />
+          <NavigationProperty Name="MessageReceivers" Relationship="DEA_DBModel.FK_MessageReceiver_User" FromRole="User" ToRole="MessageReceiver" />
+          <NavigationProperty Name="Parents" Relationship="DEA_DBModel.FK_Parent_User" FromRole="User" ToRole="Parent" />
+          <NavigationProperty Name="Students" Relationship="DEA_DBModel.FK_Student_User" FromRole="User" ToRole="Student" />
+        </EntityType>
+        <Association Name="FK_ActivityLog_Users">
+          <End Type="DEA_DBModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.ActivityLog" Role="ActivityLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ActivityLog">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attendance_Subject">
+          <End Type="DEA_DBModel.Subject" Role="Subject" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.Attendance" Role="Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subject">
+              <PropertyRef Name="SubjectID" />
+            </Principal>
+            <Dependent Role="Attendance">
+              <PropertyRef Name="SubjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentAttandence_Attendance">
+          <End Type="DEA_DBModel.Attendance" Role="Attendance" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.StudentAttandence" Role="StudentAttandence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Attendance">
+              <PropertyRef Name="AttandenceID" />
+            </Principal>
+            <Dependent Role="StudentAttandence">
+              <PropertyRef Name="AttandenceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Diary_Class">
+          <End Type="DEA_DBModel.Class" Role="Class" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.Diary" Role="Diary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassID" />
+            </Principal>
+            <Dependent Role="Diary">
+              <PropertyRef Name="ClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Class">
+          <End Type="DEA_DBModel.Class" Role="Class" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassID" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="ClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subject_Class">
+          <End Type="DEA_DBModel.Class" Role="Class" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.Subject" Role="Subject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassID" />
+            </Principal>
+            <Dependent Role="Subject">
+              <PropertyRef Name="ClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HomeWork_Diary">
+          <End Type="DEA_DBModel.Diary" Role="Diary" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.HomeWork" Role="HomeWork" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Diary">
+              <PropertyRef Name="DiaryID" />
+            </Principal>
+            <Dependent Role="HomeWork">
+              <PropertyRef Name="DiaryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Role">
+          <End Type="DEA_DBModel.Role" Role="Role" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.Employee" Role="Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_User">
+          <End Type="DEA_DBModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.Employee" Role="Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeAttandence_Employee">
+          <End Type="DEA_DBModel.Employee" Role="Employee" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.EmployeeAttandence" Role="EmployeeAttandence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="EmployeeAttandence">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subject_Teacher">
+          <End Type="DEA_DBModel.Employee" Role="Employee" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.Subject" Role="Subject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Subject">
+              <PropertyRef Name="TeacherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HomeWork_Subject">
+          <End Type="DEA_DBModel.Subject" Role="Subject" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.HomeWork" Role="HomeWork" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subject">
+              <PropertyRef Name="SubjectID" />
+            </Principal>
+            <Dependent Role="HomeWork">
+              <PropertyRef Name="SubjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LoginTime_User">
+          <End Type="DEA_DBModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.LoginTime" Role="LoginTime" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="LoginTime">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_User">
+          <End Type="DEA_DBModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.Message" Role="Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Message">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MessageReceiver_Message">
+          <End Type="DEA_DBModel.Message" Role="Message" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.MessageReceiver" Role="MessageReceiver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="MessageID" />
+            </Principal>
+            <Dependent Role="MessageReceiver">
+              <PropertyRef Name="MessageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MessageReceiver_User">
+          <End Type="DEA_DBModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.MessageReceiver" Role="MessageReceiver" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="MessageReceiver">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Parent_User">
+          <End Type="DEA_DBModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.Parent" Role="Parent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Parent">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Parent">
+          <End Type="DEA_DBModel.Parent" Role="Parent" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parent">
+              <PropertyRef Name="ParentID" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="ParentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Project_Subject">
+          <End Type="DEA_DBModel.Subject" Role="Subject" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.Project" Role="Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subject">
+              <PropertyRef Name="SubjectID" />
+            </Principal>
+            <Dependent Role="Project">
+              <PropertyRef Name="SubjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Term_Session">
+          <End Type="DEA_DBModel.Session" Role="Session" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.Term" Role="Term" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Session">
+              <PropertyRef Name="SessionID" />
+            </Principal>
+            <Dependent Role="Term">
+              <PropertyRef Name="SessionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_User">
+          <End Type="DEA_DBModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentAttandence_Student">
+          <End Type="DEA_DBModel.Student" Role="Student" Multiplicity="0..1" />
+          <End Type="DEA_DBModel.StudentAttandence" Role="StudentAttandence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="StudentAttandence">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StoreContainer" CdmEntityContainer="DEA_DBEntities" >
+          <EntitySetMapping Name="ActivityLogs">
+            <EntityTypeMapping TypeName="DEA_DBModel.ActivityLog">
+              <MappingFragment StoreEntitySet="ActivityLog">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Operation" ColumnName="Operation" />
+                <ScalarProperty Name="LogID" ColumnName="LogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Announcements">
+            <EntityTypeMapping TypeName="DEA_DBModel.Announcement">
+              <MappingFragment StoreEntitySet="Announcement">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Attendances">
+            <EntityTypeMapping TypeName="DEA_DBModel.Attendance">
+              <MappingFragment StoreEntitySet="Attendance">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+                <ScalarProperty Name="AttandenceID" ColumnName="AttandenceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Classes">
+            <EntityTypeMapping TypeName="DEA_DBModel.Class">
+              <MappingFragment StoreEntitySet="Class">
+                <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+                <ScalarProperty Name="Section" ColumnName="Section" />
+                <ScalarProperty Name="Class1" ColumnName="Class" />
+                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Diaries">
+            <EntityTypeMapping TypeName="DEA_DBModel.Diary">
+              <MappingFragment StoreEntitySet="Diary">
+                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="DiaryID" ColumnName="DiaryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="DEA_DBModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="SpouseBusinessAddress" ColumnName="SpouseBusinessAddress" />
+                <ScalarProperty Name="SpouseOccupation" ColumnName="SpouseOccupation" />
+                <ScalarProperty Name="SpouseDegree" ColumnName="SpouseDegree" />
+                <ScalarProperty Name="SpouseName" ColumnName="SpouseName" />
+                <ScalarProperty Name="Landline" ColumnName="Landline" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PostalAddress" ColumnName="PostalAddress" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Religion" ColumnName="Religion" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+                <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+                <ScalarProperty Name="DateAvailable" ColumnName="DateAvailable" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeAttandences">
+            <EntityTypeMapping TypeName="DEA_DBModel.EmployeeAttandence">
+              <MappingFragment StoreEntitySet="EmployeeAttandence">
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="EAttandenceID" ColumnName="EAttandenceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HomeWork">
+            <EntityTypeMapping TypeName="DEA_DBModel.HomeWork">
+              <MappingFragment StoreEntitySet="HomeWork">
+                <ScalarProperty Name="DiaryID" ColumnName="DiaryID" />
+                <ScalarProperty Name="HWDetail" ColumnName="HWDetail" />
+                <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+                <ScalarProperty Name="HWID" ColumnName="HWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoginTimes">
+            <EntityTypeMapping TypeName="DEA_DBModel.LoginTime">
+              <MappingFragment StoreEntitySet="LoginTime">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="LTID" ColumnName="LTID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Messages">
+            <EntityTypeMapping TypeName="DEA_DBModel.Message">
+              <MappingFragment StoreEntitySet="Message">
+                <ScalarProperty Name="IsMail" ColumnName="IsMail" />
+                <ScalarProperty Name="IsText" ColumnName="IsText" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="TIme" ColumnName="TIme" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MessageReceivers">
+            <EntityTypeMapping TypeName="DEA_DBModel.MessageReceiver">
+              <MappingFragment StoreEntitySet="MessageReceiver">
+                <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ReceiverID" ColumnName="ReceiverID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Parents">
+            <EntityTypeMapping TypeName="DEA_DBModel.Parent">
+              <MappingFragment StoreEntitySet="Parent">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="MotherOccupation" ColumnName="MotherOccupation" />
+                <ScalarProperty Name="MotherCell" ColumnName="MotherCell" />
+                <ScalarProperty Name="MotherEmail" ColumnName="MotherEmail" />
+                <ScalarProperty Name="MotherName" ColumnName="MotherName" />
+                <ScalarProperty Name="FatherOccupation" ColumnName="FatherOccupation" />
+                <ScalarProperty Name="FatherCell" ColumnName="FatherCell" />
+                <ScalarProperty Name="FatherEmail" ColumnName="FatherEmail" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ParentTeacherMeetings">
+            <EntityTypeMapping TypeName="DEA_DBModel.ParentTeacherMeeting">
+              <MappingFragment StoreEntitySet="ParentTeacherMeeting">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="PTMID" ColumnName="PTMID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projects">
+            <EntityTypeMapping TypeName="DEA_DBModel.Project">
+              <MappingFragment StoreEntitySet="Project">
+                <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TItle" ColumnName="TItle" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="DEA_DBModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sessions">
+            <EntityTypeMapping TypeName="DEA_DBModel.Session">
+              <MappingFragment StoreEntitySet="Session">
+                <ScalarProperty Name="SessionEndDate" ColumnName="SessionEndDate" />
+                <ScalarProperty Name="SessionStartDate" ColumnName="SessionStartDate" />
+                <ScalarProperty Name="SessionName" ColumnName="SessionName" />
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="DEA_DBModel.Student">
+              <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Religion" ColumnName="Religion" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentAttandences">
+            <EntityTypeMapping TypeName="DEA_DBModel.StudentAttandence">
+              <MappingFragment StoreEntitySet="StudentAttandence">
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="AttandenceID" ColumnName="AttandenceID" />
+                <ScalarProperty Name="SAttandenceID" ColumnName="SAttandenceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subjects">
+            <EntityTypeMapping TypeName="DEA_DBModel.Subject">
+              <MappingFragment StoreEntitySet="Subject">
+                <ScalarProperty Name="TeacherID" ColumnName="TeacherID" />
+                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+                <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+                <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Terms">
+            <EntityTypeMapping TypeName="DEA_DBModel.Term">
+              <MappingFragment StoreEntitySet="Term">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+                <ScalarProperty Name="TermEndDate" ColumnName="TermEndDate" />
+                <ScalarProperty Name="TermStartDate" ColumnName="TermStartDate" />
+                <ScalarProperty Name="TermName" ColumnName="TermName" />
+                <ScalarProperty Name="TermID" ColumnName="TermID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="DEA_DBModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

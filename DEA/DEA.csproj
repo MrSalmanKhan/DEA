@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A1222AD8-64C9-4F0B-972B-B0B9E09B6479}</ProjectGuid>
+    <ProjectGuid>{2186248F-FBB4-4726-BB79-1570AF5B550A}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -24,7 +24,6 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,10 +43,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -56,100 +51,11 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="EPPlus, Version=4.1.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPPlus.4.1.1\lib\net40\EPPlus.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="itextsharp.xmlworker, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <HintPath>..\packages\itextsharp.xmlworker.5.5.13\lib\itextsharp.xmlworker.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="NReco.PdfGenerator, Version=1.1.15.0, Culture=neutral, PublicKeyToken=231663d50a41b451, processorArchitecture=MSIL">
-      <HintPath>..\packages\NReco.PdfGenerator.1.1.15\lib\net20\NReco.PdfGenerator.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -161,18 +67,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Http, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Web.Http.WebHost, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -180,10 +74,6 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Web.Razor">
@@ -951,24 +841,6 @@
     <Content Include="AdminLTE\plugins\ionslider\js\ion.rangeSlider.min.js" />
     <Content Include="AdminLTE\plugins\jquery-ui\js\jquery-ui.js" />
     <Content Include="AdminLTE\plugins\jquery-ui\js\jquery-ui.min.js" />
-    <Content Include="bg.jpg" />
-    <Content Include="calculator-pencil-512.png" />
-    <Content Include="download.jpeg" />
-    <Content Include="Icon.png" />
-    <Content Include="images.jpeg" />
-    <Content Include="Models\DEA.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DEA.edmx</DependentUpon>
-      <LastGenOutput>DEA.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\DEA.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DEA.edmx</DependentUpon>
-      <LastGenOutput>DEA.cs</LastGenOutput>
-    </Content>
-    <Content Include="SEA %283%29.png" />
-    <Content Include="search.PNG" />
-    <Content Include="Webalys-Kameleon.pics-Student-3.ico" />
     <None Include="AdminLTE\plugins\jquery-validate\js\jquery.validate-vsdoc.js" />
     <Content Include="AdminLTE\plugins\jquery-validate\js\jquery.validate.js" />
     <Content Include="AdminLTE\plugins\jquery-validate\js\jquery.validate.min.js" />
@@ -1382,6 +1254,10 @@
     <Content Include="AdminLTE\select2-master\vendor\jquery-2.1.0.js" />
     <Content Include="AdminLTE\selectone.js" />
     <Content Include="AdminLTE\style.css" />
+    <Content Include="App_Data\DEA_DB.mdf" />
+    <Content Include="App_Data\DEA_DB_log.ldf">
+      <DependentUpon>DEA_DB.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -1404,11 +1280,20 @@
     <Content Include="Content\style.css" />
     <Content Include="css\monthly.css" />
     <Content Include="css\test.css" />
-    <Content Include="Custom-Icon-Design-Pretty-Office-10-Teacher-male.ico" />
-    <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\DEAModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DEAModel.edmx</DependentUpon>
+      <LastGenOutput>DEAModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DEAModel.edmx.sql" />
+    <Content Include="Models\DEAModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DEAModel.edmx</DependentUpon>
+      <LastGenOutput>DEAModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\Account\Login.js" />
     <Content Include="Scripts\Account\Register.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -1456,14 +1341,6 @@
     <Content Include="Scripts\Home\DashboardV1.js" />
     <Content Include="Scripts\Home\DashboardV2-menu.js" />
     <Content Include="Scripts\Home\DashboardV2.js" />
-    <EntityDeploy Include="Models\DEA.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DEA.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\DEA.edmx.diagram">
-      <DependentUpon>DEA.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\AspNetFinanceLedgerBalance" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1516,390 +1393,105 @@
     <Content Include="Styles\Elements\General.css" />
     <Content Include="Styles\Elements\Icons.css" />
     <Content Include="Styles\Elements\Modals.css" />
-    <Content Include="Views\AspNetFinanceLedgers\css\component.css" />
-    <Content Include="Views\AspNetFinanceLedgers\css\demo.css" />
-    <Content Include="Views\AspNetFinanceLedgers\css\normalize.css" />
-    <Content Include="Views\AspNetFinanceLedgers\js\modernizr.custom.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\Admin_DashboardController.cs" />
-    <Compile Include="Controllers\AspNetAnnouncementController.cs" />
-    <Compile Include="Controllers\AspNetAttendanceController.cs" />
-    <Compile Include="Controllers\AspNetChapterController.cs" />
-    <Compile Include="Controllers\AspNetClassController.cs" />
-    <Compile Include="Controllers\AspNetEmployeesController.cs" />
-    <Compile Include="Controllers\AspNetFeedBackFormController.cs" />
-    <Compile Include="Controllers\AspNetFinanceLedgerBalancesController.cs" />
-    <Compile Include="Controllers\AspNetFinanceLedgersController.cs" />
-    <Compile Include="Controllers\AspNetFinanceLedgerTypesController.cs" />
-    <Compile Include="Controllers\AspNetFinanceMonthsController.cs" />
-    <Compile Include="Controllers\AspNetFinancePeriodsController.cs" />
-    <Compile Include="Controllers\AspNetFinanceVoucherDetailsController.cs" />
-    <Compile Include="Controllers\AspNetFinanceVouchersController.cs" />
-    <Compile Include="Controllers\AspNetHomeworksController.cs" />
-    <Compile Include="Controllers\AspNetLogsController.cs" />
-    <Compile Include="Controllers\AspNetMessagesController.cs" />
-    <Compile Include="Controllers\AspNetProjectController.cs" />
-    <Compile Include="Controllers\AspNetPushNotificationsController.cs" />
-    <Compile Include="Controllers\AspNetRolesController.cs" />
-    <Compile Include="Controllers\AspNetSalariesController.cs" />
-    <Compile Include="Controllers\AspNetSalaryDetailsController.cs" />
-    <Compile Include="Controllers\AspNetSessionController.cs" />
-    <Compile Include="Controllers\AspNetStudentPerformanceReportController.cs" />
-    <Compile Include="Controllers\AspNetStudent_HomeWorkController.cs" />
-    <Compile Include="Controllers\AspNetSubjectController.cs" />
-    <Compile Include="Controllers\AspNetSubject_HomeworkController.cs" />
-    <Compile Include="Controllers\AspNetTeacherController.cs" />
-    <Compile Include="Controllers\AspNetTermController.cs" />
-    <Compile Include="Controllers\AspNetTopicController.cs" />
-    <Compile Include="Controllers\AspNetUserController.cs" />
-    <Compile Include="Controllers\AspNetVirtualRolesController.cs" />
-    <Compile Include="Controllers\AssessmentControllers\AspNetAssessmentController.cs" />
-    <Compile Include="Controllers\AssessmentControllers\AspNetCatalogController.cs" />
-    <Compile Include="Controllers\AssessmentControllers\AspNetSubject_CatalogController.cs" />
-    <Compile Include="Controllers\FeeControllers\Accountant_DashboardController.cs" />
-    <Compile Include="Controllers\FeeControllers\AspNetClass_FeeTypeController.cs" />
-    <Compile Include="Controllers\FeeControllers\AspNetDiscountTypeController.cs" />
-    <Compile Include="Controllers\FeeControllers\AspNetDurationTypesController.cs" />
-    <Compile Include="Controllers\FeeControllers\AspNetFeeChallanController.cs" />
-    <Compile Include="Controllers\FeeControllers\AspNetFeeTypeController.cs" />
-    <Compile Include="Controllers\FeeControllers\AspNetStudent_DiscountController.cs" />
-    <Compile Include="Controllers\FeeControllers\AspNetStudent_Discount_ApplicableController.cs" />
-    <Compile Include="Controllers\FeeControllers\AspNetStudent_FineController.cs" />
-    <Compile Include="Controllers\FeeControllers\AspNetStudent_PaymentController.cs" />
-    <Compile Include="Controllers\FeeControllers\AspNetStudent_PaymentDetailController.cs" />
-    <Compile Include="Controllers\FeeControllers\FeeManagementController.cs" />
-    <Compile Include="Controllers\GenralApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LessonPlanControllers\AspNetLessonPlanBreakdownController.cs" />
-    <Compile Include="Controllers\LessonPlanControllers\AspNetLessonPlanBreakdownHeadingController.cs" />
-    <Compile Include="Controllers\LessonPlanControllers\AspNetLessonPlanController.cs" />
-    <Compile Include="Controllers\LoginApiController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\NotificationContollers\AspNetNotificationController.cs" />
-    <Compile Include="Controllers\ParentController\Parent_DashboardController.cs" />
-    <Compile Include="Controllers\ParentsApiController.cs" />
-    <Compile Include="Controllers\ParentTeacherMeeting\AspNetParentTeacherMeetingsController.cs" />
-    <Compile Include="Controllers\ParentTeacherMeeting\AspNetPTMAttendanceController.cs" />
-    <Compile Include="Controllers\ParentTeacherMeeting\AspNetPTMFormRoleController.cs" />
-    <Compile Include="Controllers\ParentTeacherMeeting\AspNetPTM_ParentFeedbackController.cs" />
-    <Compile Include="Controllers\ParentTeacherMeeting\AspNetPTM_TeacherFeedbackController.cs" />
-    <Compile Include="Controllers\ParentTeacherMeeting\ParentTeacherMeetingController.cs" />
-    <Compile Include="Controllers\Principal_DashboardController.cs" />
-    <Compile Include="Controllers\ReportsController.cs" />
-    <Compile Include="Controllers\Student_DashboardController.cs" />
-    <Compile Include="Controllers\Supervisor_DashboardController.cs" />
-    <Compile Include="Controllers\TeacherApiController.cs" />
-    <Compile Include="Controllers\Teacher_DashboardController.cs" />
-    <Compile Include="Controllers\TermAssessmentControllers\AspNetAssessment_QuestionController.cs" />
-    <Compile Include="Controllers\TermAssessmentControllers\AspNetAssessment_Questions_CategoryController.cs" />
-    <Compile Include="Controllers\TermAssessmentControllers\TermAssessmentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AspNetAnnouncement.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
+    <Compile Include="Models\ActivityLog.cs">
+      <DependentUpon>DEAModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\AspNetAnnouncement_Subject.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
+    <Compile Include="Models\Announcement.cs">
+      <DependentUpon>DEAModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\AspNetAssessment.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
+    <Compile Include="Models\Attendance.cs">
+      <DependentUpon>DEAModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\AspNetAssessment_Question.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
+    <Compile Include="Models\Class.cs">
+      <DependentUpon>DEAModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\AspNetAssessment_Questions_Category.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetAssessment_Topic.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetAttendance.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetCatalog.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetChapter.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetClass.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetClass_FeeType.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetCurriculum.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetDiscountType.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetDurationType.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetEmployee.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetEmployeeAttendance.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetEmployee_Attendance.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetFeeChallan.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetFeedBackForm.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetFeeType.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetFinanceLedger.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetFinanceLedgerBalance.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetFinanceLedgerType.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetFinanceMonth.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetFinancePeriod.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetFinanceVoucher.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetFinanceVoucherDetail.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetFinanceVoucherRecord.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetHomework.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetLessonPlan.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetLessonPlanBreakdown.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetLessonPlanBreakdownHeading.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetLessonPlan_Topic.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetLog.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetLoginTime.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetMessage.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetMessage_Receiver.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetNotification.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetNotification_User.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetParent.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetParentTeacherMeeting.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetParent_Child.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetParent_Notification.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetProject.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetPTMAttendance.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetPTMFormRole.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetPTM_ParentFeedback.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetPTM_TeacherFeedback.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetPushNotification.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetRole.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetSalary.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetSalaryDetail.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetSession.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetStudent.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetStudentPerformanceReport.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetStudent_Announcement.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetStudent_Assessment.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetStudent_Attendance.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetStudent_Discount.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetStudent_Discount_Applicable.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetStudent_Fine.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetStudent_HomeWork.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetStudent_Notification.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetStudent_Payment.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetStudent_PaymentDetail.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetStudent_Project.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetStudent_Subject.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetStudent_Term_Assessment.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetStudent_Term_Assessments_Answers.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetSubject.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetSubject_Catalog.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetSubject_Homework.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetTeacher.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetTerm.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetTopic.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetUser.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetUserClaim.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetUserLogin.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetVirtualRole.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DailyHomework.cs" />
-    <Compile Include="Models\DEA.Context.cs">
+    <Compile Include="Models\DEAModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DEA.Context.tt</DependentUpon>
+      <DependentUpon>DEAModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DEA.cs">
+    <Compile Include="Models\DEAModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DEA.tt</DependentUpon>
+      <DependentUpon>DEAModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DEA.Designer.cs">
+    <Compile Include="Models\DEAModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DEA.edmx</DependentUpon>
+      <DependentUpon>DEAModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\GetStudentBasicData_Result.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
+    <Compile Include="Models\Diary.cs">
+      <DependentUpon>DEAModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\GetStudentSessionSubjectAssessment_Result.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
+    <Compile Include="Models\Employee.cs">
+      <DependentUpon>DEAModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\GetStudentSubjects_Result.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
+    <Compile Include="Models\EmployeeAttandence.cs">
+      <DependentUpon>DEAModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\GetStudentTermSubjectAssessment_Result.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
+    <Compile Include="Models\HomeWork.cs">
+      <DependentUpon>DEAModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\GetSubjctAssessmentQuestions_Result.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
+    <Compile Include="Models\LoginTime.cs">
+      <DependentUpon>DEAModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\LedgerDetails.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\ruffdata.cs">
-      <DependentUpon>DEA.tt</DependentUpon>
+    <Compile Include="Models\Message.cs">
+      <DependentUpon>DEAModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\StudentAssessments\AssessmentsQ-A.cs" />
-    <Compile Include="Models\StudentFeeDetail.cs" />
-    <Compile Include="Models\TreeViewNodeVM.cs" />
-    <Compile Include="Models\Utility.cs" />
-    <Compile Include="Models\Voucher.cs" />
-    <Compile Include="Models\VoucherList.cs" />
+    <Compile Include="Models\MessageReceiver.cs">
+      <DependentUpon>DEAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Parent.cs">
+      <DependentUpon>DEAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ParentTeacherMeeting.cs">
+      <DependentUpon>DEAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Project.cs">
+      <DependentUpon>DEAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Role.cs">
+      <DependentUpon>DEAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Session.cs">
+      <DependentUpon>DEAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Student.cs">
+      <DependentUpon>DEAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentAttandence.cs">
+      <DependentUpon>DEAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Subject.cs">
+      <DependentUpon>DEAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Term.cs">
+      <DependentUpon>DEAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>DEAModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rest.cs" />
-    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <EntityDeploy Include="Models\DEAModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DEAModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DEAModel.edmx.diagram">
+      <DependentUpon>DEAModel.edmx</DependentUpon>
     </Content>
-    <Content Include="AdminLTE\bootstrap\css\bootstrap.css.map" />
-    <Content Include="AdminLTE\bootstrap\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="AdminLTE\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="AdminLTE\bootstrap\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="AdminLTE\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="AdminLTE\bootstrap-treeview\.bowerrc" />
     <Content Include="AdminLTE\bootstrap-treeview\.gitattributes" />
     <Content Include="AdminLTE\bootstrap-treeview\.gitignore" />
@@ -1911,6 +1503,11 @@
     <Content Include="AdminLTE\bootstrap-treeview\package.json" />
     <Content Include="AdminLTE\bootstrap-treeview\README.md" />
     <Content Include="AdminLTE\bootstrap-treeview\tests\README.md" />
+    <Content Include="AdminLTE\bootstrap\css\bootstrap.css.map" />
+    <Content Include="AdminLTE\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="AdminLTE\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="AdminLTE\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="AdminLTE\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="AdminLTE\plugins\ckeditor\js\CHANGES.md" />
     <Content Include="AdminLTE\plugins\ckeditor\js\LICENSE.md" />
     <Content Include="AdminLTE\plugins\ckeditor\js\plugins\scayt\LICENSE.md" />
@@ -2079,7 +1676,6 @@
     <Content Include="AdminLTE\select2-master\src\scss\_dropdown.scss" />
     <Content Include="AdminLTE\select2-master\src\scss\_multiple.scss" />
     <Content Include="AdminLTE\select2-master\src\scss\_single.scss" />
-    <Content Include="App_Browsers\qt.browser" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap\alerts.less" />
@@ -2172,14 +1768,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Styles\Elements\sweetalert2.scss" />
-    <Content Include="Views\Accountant_Dashboard\Accountant_Dashboard.cshtml" />
-    <Content Include="Views\Accountant_Dashboard\BlankPage.cshtml" />
-    <Content Include="Views\Accountant_Dashboard\Create.cshtml" />
-    <Content Include="Views\Accountant_Dashboard\Delete.cshtml" />
-    <Content Include="Views\Accountant_Dashboard\Details.cshtml" />
-    <Content Include="Views\Accountant_Dashboard\Edit.cshtml" />
-    <Content Include="Views\Accountant_Dashboard\Index.cshtml" />
-    <Content Include="Views\Accountant_Dashboard\_ViewStart.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
@@ -2193,561 +1781,26 @@
     <Content Include="Views\Account\SendCode.cshtml" />
     <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\AdminLte\Colors.cshtml" />
     <Content Include="Views\AdminLte\Index.cshtml" />
-    <Content Include="Views\Admin_Dashboard\AccountantRegister.cshtml" />
-    <Content Include="Views\Admin_Dashboard\AddClass.cshtml" />
-    <Content Include="Views\Admin_Dashboard\AddSubject.cshtml" />
-    <Content Include="Views\Admin_Dashboard\Admin_Dashboard.cshtml" />
-    <Content Include="Views\Admin_Dashboard\BlankPage.cshtml" />
-    <Content Include="Views\Admin_Dashboard\DisabledTeachers.cshtml" />
-    <Content Include="Views\Admin_Dashboard\EmployeeRegister.cshtml" />
-    <Content Include="Views\Admin_Dashboard\EmployeesIndex.cshtml" />
-    <Content Include="Views\Admin_Dashboard\ParentRegister.cshtml" />
-    <Content Include="Views\Admin_Dashboard\StudentRegister.cshtml" />
-    <Content Include="Views\Admin_Dashboard\TeacherRegister.cshtml" />
-    <Content Include="Views\Admin_Dashboard\_ClassAssessment.cshtml" />
-    <Content Include="Views\Admin_Dashboard\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetAnnouncement\Create.cshtml" />
-    <Content Include="Views\AspNetAnnouncement\Delete.cshtml" />
-    <Content Include="Views\AspNetAnnouncement\Details.cshtml" />
-    <Content Include="Views\AspNetAnnouncement\Edit.cshtml" />
-    <Content Include="Views\AspNetAnnouncement\Index.cshtml" />
-    <Content Include="Views\AspNetAnnouncement\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetAssessment\Assessment_Marks.cshtml" />
-    <Content Include="Views\AspNetAssessment\Assessment_Submission.cshtml" />
-    <Content Include="Views\AspNetAssessment\Create.cshtml" />
-    <Content Include="Views\AspNetAssessment\Delete.cshtml" />
-    <Content Include="Views\AspNetAssessment\Details.cshtml" />
-    <Content Include="Views\AspNetAssessment\Edit.cshtml" />
-    <Content Include="Views\AspNetAssessment\Index.cshtml" />
-    <Content Include="Views\AspNetAssessment\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetAssessment_Questions_Category\Create.cshtml" />
-    <Content Include="Views\AspNetAssessment_Questions_Category\Delete.cshtml" />
-    <Content Include="Views\AspNetAssessment_Questions_Category\Details.cshtml" />
-    <Content Include="Views\AspNetAssessment_Questions_Category\Edit.cshtml" />
-    <Content Include="Views\AspNetAssessment_Questions_Category\Index.cshtml" />
-    <Content Include="Views\AspNetAssessment_Questions_Category\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetAssessment_Question\Create.cshtml" />
-    <Content Include="Views\AspNetAssessment_Question\Delete.cshtml" />
-    <Content Include="Views\AspNetAssessment_Question\Details.cshtml" />
-    <Content Include="Views\AspNetAssessment_Question\Edit.cshtml" />
-    <Content Include="Views\AspNetAssessment_Question\Index.cshtml" />
-    <Content Include="Views\AspNetAssessment_Question\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetAssignment\AspNetCurriculums\Create.cshtml" />
-    <Content Include="Views\AspNetAssignment\AspNetCurriculums\Delete.cshtml" />
-    <Content Include="Views\AspNetAssignment\AspNetCurriculums\Details.cshtml" />
-    <Content Include="Views\AspNetAssignment\AspNetCurriculums\Edit.cshtml" />
-    <Content Include="Views\AspNetAssignment\AspNetCurriculums\Index.cshtml" />
-    <Content Include="Views\AspNetAssignment\AspNetCurriculums\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetAssignment\Create.cshtml" />
-    <Content Include="Views\AspNetAssignment\Delete.cshtml" />
-    <Content Include="Views\AspNetAssignment\Details.cshtml" />
-    <Content Include="Views\AspNetAssignment\Edit.cshtml" />
-    <Content Include="Views\AspNetAssignment\Index.cshtml" />
-    <Content Include="Views\AspNetAssignment\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetAssignment\_View_Assignments.cshtml" />
-    <Content Include="Views\AspNetCatalog\Create.cshtml" />
-    <Content Include="Views\AspNetCatalog\Delete.cshtml" />
-    <Content Include="Views\AspNetCatalog\Details.cshtml" />
-    <Content Include="Views\AspNetCatalog\Edit.cshtml" />
-    <Content Include="Views\AspNetCatalog\Index.cshtml" />
-    <Content Include="Views\AspNetCatalog\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetChapter\Create.cshtml" />
-    <Content Include="Views\AspNetChapter\Delete.cshtml" />
-    <Content Include="Views\AspNetChapter\Details.cshtml" />
-    <Content Include="Views\AspNetChapter\Edit.cshtml" />
-    <Content Include="Views\AspNetChapter\Index.cshtml" />
-    <Content Include="Views\AspNetChapter\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetClass\Create.cshtml" />
-    <Content Include="Views\AspNetClass\Delete.cshtml" />
-    <Content Include="Views\AspNetClass\Details.cshtml" />
-    <Content Include="Views\AspNetClass\Edit.cshtml" />
-    <Content Include="Views\AspNetClass\Index.cshtml" />
-    <Content Include="Views\AspNetClass\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetClass_FeeType\Create.cshtml" />
-    <Content Include="Views\AspNetClass_FeeType\Delete.cshtml" />
-    <Content Include="Views\AspNetClass_FeeType\Details.cshtml" />
-    <Content Include="Views\AspNetClass_FeeType\Edit.cshtml" />
-    <Content Include="Views\AspNetClass_FeeType\Index.cshtml" />
-    <Content Include="Views\AspNetClass_FeeType\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetDiscountType\Create.cshtml" />
-    <Content Include="Views\AspNetDiscountType\Delete.cshtml" />
-    <Content Include="Views\AspNetDiscountType\Details.cshtml" />
-    <Content Include="Views\AspNetDiscountType\Edit.cshtml" />
-    <Content Include="Views\AspNetDiscountType\Index.cshtml" />
-    <Content Include="Views\AspNetDiscountType\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetDurationTypes\Create.cshtml" />
-    <Content Include="Views\AspNetDurationTypes\Delete.cshtml" />
-    <Content Include="Views\AspNetDurationTypes\Details.cshtml" />
-    <Content Include="Views\AspNetDurationTypes\Edit.cshtml" />
-    <Content Include="Views\AspNetDurationTypes\Index.cshtml" />
-    <Content Include="Views\AspNetDurationTypes\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetEmployees\Create.cshtml" />
-    <Content Include="Views\AspNetEmployees\Delete.cshtml" />
-    <Content Include="Views\AspNetEmployees\Details.cshtml" />
-    <Content Include="Views\AspNetEmployees\DisabledEmployee.cshtml" />
-    <Content Include="Views\AspNetEmployees\Edit.cshtml" />
-    <Content Include="Views\AspNetEmployees\Index.cshtml" />
-    <Content Include="Views\AspNetEmployees\NonManagerialEmployees.cshtml" />
-    <Content Include="Views\AspNetEmployees\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetExam\Create.cshtml" />
-    <Content Include="Views\AspNetExam\Delete.cshtml" />
-    <Content Include="Views\AspNetExam\Details.cshtml" />
-    <Content Include="Views\AspNetExam\Edit.cshtml" />
-    <Content Include="Views\AspNetExam\Index.cshtml" />
-    <Content Include="Views\AspNetExam\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetExam\_View_Exam.cshtml" />
-    <Content Include="Views\AspNetFeeChallan\Create.cshtml" />
-    <Content Include="Views\AspNetFeeChallan\Delete.cshtml" />
-    <Content Include="Views\AspNetFeeChallan\Details.cshtml" />
-    <Content Include="Views\AspNetFeeChallan\Edit.cshtml" />
-    <Content Include="Views\AspNetFeeChallan\FeePreview.cshtml" />
-    <Content Include="Views\AspNetFeeChallan\Index.cshtml" />
-    <Content Include="Views\AspNetFeeChallan\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetFeedBackForm\Create.cshtml" />
-    <Content Include="Views\AspNetFeedBackForm\Delete.cshtml" />
-    <Content Include="Views\AspNetFeedBackForm\Details.cshtml" />
-    <Content Include="Views\AspNetFeedBackForm\Edit.cshtml" />
-    <Content Include="Views\AspNetFeedBackForm\Index.cshtml" />
-    <Content Include="Views\AspNetFeedBackForm\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetFeeType\Create.cshtml" />
-    <Content Include="Views\AspNetFeeType\Delete.cshtml" />
-    <Content Include="Views\AspNetFeeType\Details.cshtml" />
-    <Content Include="Views\AspNetFeeType\Edit.cshtml" />
-    <Content Include="Views\AspNetFeeType\Index.cshtml" />
-    <Content Include="Views\AspNetFeeType\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgerBalances\Create.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgerBalances\Delete.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgerBalances\Details.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgerBalances\Edit.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgerBalances\Index.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgers\ChildNode.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgers\Create.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgers\Delete.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgers\Details.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgers\Edit.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgers\Index.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgers\LedgerDetail.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgers\TreeView.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgers\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgerTypes\AspNetLessonPlan\Create.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgerTypes\AspNetLessonPlan\Delete.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgerTypes\AspNetLessonPlan\Details.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgerTypes\AspNetLessonPlan\Edit.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgerTypes\AspNetLessonPlan\EditLessonPlan.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgerTypes\AspNetLessonPlan\EditTopics.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgerTypes\AspNetLessonPlan\Index.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgerTypes\AspNetLessonPlan\View_LessonPlan.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgerTypes\AspNetLessonPlan\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgerTypes\Create.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgerTypes\Delete.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgerTypes\Details.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgerTypes\Edit.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgerTypes\Index.cshtml" />
-    <Content Include="Views\AspNetFinanceLedgerTypes\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetFinanceMonths\Create.cshtml" />
-    <Content Include="Views\AspNetFinanceMonths\Delete.cshtml" />
-    <Content Include="Views\AspNetFinanceMonths\Details.cshtml" />
-    <Content Include="Views\AspNetFinanceMonths\Edit.cshtml" />
-    <Content Include="Views\AspNetFinanceMonths\Index.cshtml" />
-    <Content Include="Views\AspNetFinanceMonths\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetFinancePeriods\Create.cshtml" />
-    <Content Include="Views\AspNetFinancePeriods\Delete.cshtml" />
-    <Content Include="Views\AspNetFinancePeriods\Details.cshtml" />
-    <Content Include="Views\AspNetFinancePeriods\Edit.cshtml" />
-    <Content Include="Views\AspNetFinancePeriods\Index.cshtml" />
-    <Content Include="Views\AspNetFinancePeriods\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetFinanceVoucherDetails\Create.cshtml" />
-    <Content Include="Views\AspNetFinanceVoucherDetails\Delete.cshtml" />
-    <Content Include="Views\AspNetFinanceVoucherDetails\Details.cshtml" />
-    <Content Include="Views\AspNetFinanceVoucherDetails\Edit.cshtml" />
-    <Content Include="Views\AspNetFinanceVoucherDetails\Index.cshtml" />
-    <Content Include="Views\AspNetFinanceVoucherDetails\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetFinanceVouchers\Create.cshtml" />
-    <Content Include="Views\AspNetFinanceVouchers\CreateVoucher.cshtml" />
-    <Content Include="Views\AspNetFinanceVouchers\Delete.cshtml" />
-    <Content Include="Views\AspNetFinanceVouchers\Details.cshtml" />
-    <Content Include="Views\AspNetFinanceVouchers\Edit.cshtml" />
-    <Content Include="Views\AspNetFinanceVouchers\EditVoucher.cshtml" />
-    <Content Include="Views\AspNetFinanceVouchers\Index.cshtml" />
-    <Content Include="Views\AspNetFinanceVouchers\PostSearchReport.cshtml" />
-    <Content Include="Views\AspNetFinanceVouchers\Print.cshtml" />
-    <Content Include="Views\AspNetFinanceVouchers\TrailBalance.cshtml" />
-    <Content Include="Views\AspNetFinanceVouchers\VoucherPosting.cshtml" />
-    <Content Include="Views\AspNetFinanceVouchers\VoucherPrint.cshtml" />
-    <Content Include="Views\AspNetFinanceVouchers\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetHomeworks\Create.cshtml" />
-    <Content Include="Views\AspNetHomeworks\Delete.cshtml" />
-    <Content Include="Views\AspNetHomeworks\Details.cshtml" />
-    <Content Include="Views\AspNetHomeworks\Edit.cshtml" />
-    <Content Include="Views\AspNetHomeworks\Index.cshtml" />
-    <Content Include="Views\AspNetHomeworks\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetLessonPlanBreakdownHeading\Create.cshtml" />
-    <Content Include="Views\AspNetLessonPlanBreakdownHeading\Delete.cshtml" />
-    <Content Include="Views\AspNetLessonPlanBreakdownHeading\Details.cshtml" />
-    <Content Include="Views\AspNetLessonPlanBreakdownHeading\Edit.cshtml" />
-    <Content Include="Views\AspNetLessonPlanBreakdownHeading\Index.cshtml" />
-    <Content Include="Views\AspNetLessonPlanBreakdownHeading\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetLessonPlanBreakdowns\Create.cshtml" />
-    <Content Include="Views\AspNetLessonPlanBreakdowns\Delete.cshtml" />
-    <Content Include="Views\AspNetLessonPlanBreakdowns\Details.cshtml" />
-    <Content Include="Views\AspNetLessonPlanBreakdowns\Edit.cshtml" />
-    <Content Include="Views\AspNetLessonPlanBreakdowns\Index.cshtml" />
-    <Content Include="Views\AspNetLessonPlanBreakdowns\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetLessonPlanBreakdown\Create.cshtml" />
-    <Content Include="Views\AspNetLessonPlanBreakdown\Delete.cshtml" />
-    <Content Include="Views\AspNetLessonPlanBreakdown\Details.cshtml" />
-    <Content Include="Views\AspNetLessonPlanBreakdown\Edit.cshtml" />
-    <Content Include="Views\AspNetLessonPlanBreakdown\Index.cshtml" />
-    <Content Include="Views\AspNetLessonPlanBreakdown\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetLessonPlanHeadings\Create.cshtml" />
-    <Content Include="Views\AspNetLessonPlanHeadings\Delete.cshtml" />
-    <Content Include="Views\AspNetLessonPlanHeadings\Details.cshtml" />
-    <Content Include="Views\AspNetLessonPlanHeadings\Edit.cshtml" />
-    <Content Include="Views\AspNetLessonPlanHeadings\Index.cshtml" />
-    <Content Include="Views\AspNetLessonPlanHeadings\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetLessonPlan\Create.cshtml" />
-    <Content Include="Views\AspNetLessonPlan\Create_LessonPlan.cshtml" />
-    <Content Include="Views\AspNetLessonPlan\Delete.cshtml" />
-    <Content Include="Views\AspNetLessonPlan\Details.cshtml" />
-    <Content Include="Views\AspNetLessonPlan\Edit.cshtml" />
-    <Content Include="Views\AspNetLessonPlan\EditLessonPlan.cshtml" />
-    <Content Include="Views\AspNetLessonPlan\EditTopics.cshtml" />
-    <Content Include="Views\AspNetLessonPlan\Index.cshtml" />
-    <Content Include="Views\AspNetLessonPlan\View_LessonPlan.cshtml" />
-    <Content Include="Views\AspNetLessonPlan\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetLessonPlan_Topic\AspNetLessonPlanBreakdown\Create.cshtml" />
-    <Content Include="Views\AspNetLessonPlan_Topic\AspNetLessonPlanBreakdown\Delete.cshtml" />
-    <Content Include="Views\AspNetLessonPlan_Topic\AspNetLessonPlanBreakdown\Details.cshtml" />
-    <Content Include="Views\AspNetLessonPlan_Topic\AspNetLessonPlanBreakdown\Edit.cshtml" />
-    <Content Include="Views\AspNetLessonPlan_Topic\AspNetLessonPlanBreakdown\Index.cshtml" />
-    <Content Include="Views\AspNetLessonPlan_Topic\AspNetLessonPlanBreakdown\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetLessonPlan_Topic\Create.cshtml" />
-    <Content Include="Views\AspNetLessonPlan_Topic\Delete.cshtml" />
-    <Content Include="Views\AspNetLessonPlan_Topic\Details.cshtml" />
-    <Content Include="Views\AspNetLessonPlan_Topic\Edit.cshtml" />
-    <Content Include="Views\AspNetLessonPlan_Topic\Index.cshtml" />
-    <Content Include="Views\AspNetLessonPlan_Topic\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetLogs\Create.cshtml" />
-    <Content Include="Views\AspNetLogs\Delete.cshtml" />
-    <Content Include="Views\AspNetLogs\Details.cshtml" />
-    <Content Include="Views\AspNetLogs\Edit.cshtml" />
-    <Content Include="Views\AspNetLogs\Index.cshtml" />
-    <Content Include="Views\AspNetLogs\ViewLogs.cshtml" />
-    <Content Include="Views\AspNetLogs\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetMessages\BlankPage.cshtml" />
-    <Content Include="Views\AspNetMessages\Create.cshtml" />
-    <Content Include="Views\AspNetMessages\Delete.cshtml" />
-    <Content Include="Views\AspNetMessages\Details.cshtml" />
-    <Content Include="Views\AspNetMessages\Edit.cshtml" />
-    <Content Include="Views\AspNetMessages\Inbox.cshtml" />
-    <Content Include="Views\AspNetMessages\NewMessage.cshtml" />
-    <Content Include="Views\AspNetMessages\ReceiveMessageDetail.cshtml" />
-    <Content Include="Views\AspNetMessages\Sent.cshtml" />
-    <Content Include="Views\AspNetMessages\SentMessageDetail.cshtml" />
-    <Content Include="Views\AspNetMessages\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetNotification\Create.cshtml" />
-    <Content Include="Views\AspNetNotification\Delete.cshtml" />
-    <Content Include="Views\AspNetNotification\Details.cshtml" />
-    <Content Include="Views\AspNetNotification\Edit.cshtml" />
-    <Content Include="Views\AspNetNotification\Index.cshtml" />
-    <Content Include="Views\AspNetParentTeacherMeetings\Create.cshtml" />
-    <Content Include="Views\AspNetParentTeacherMeetings\Delete.cshtml" />
-    <Content Include="Views\AspNetParentTeacherMeetings\Details.cshtml" />
-    <Content Include="Views\AspNetParentTeacherMeetings\Edit.cshtml" />
-    <Content Include="Views\AspNetParentTeacherMeetings\Index.cshtml" />
-    <Content Include="Views\AspNetParentTeacherMeetings\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetProject\Create.cshtml" />
-    <Content Include="Views\AspNetProject\Delete.cshtml" />
-    <Content Include="Views\AspNetProject\Details.cshtml" />
-    <Content Include="Views\AspNetProject\Edit.cshtml" />
-    <Content Include="Views\AspNetProject\Index.cshtml" />
-    <Content Include="Views\AspNetProject\Project_Submission.cshtml" />
-    <Content Include="Views\AspNetProject\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetPTMAttendance\Create.cshtml" />
-    <Content Include="Views\AspNetPTMAttendance\Delete.cshtml" />
-    <Content Include="Views\AspNetPTMAttendance\Details.cshtml" />
-    <Content Include="Views\AspNetPTMAttendance\Edit.cshtml" />
-    <Content Include="Views\AspNetPTMAttendance\Index.cshtml" />
-    <Content Include="Views\AspNetPTMFormRole\Create.cshtml" />
-    <Content Include="Views\AspNetPTMFormRole\Delete.cshtml" />
-    <Content Include="Views\AspNetPTMFormRole\Details.cshtml" />
-    <Content Include="Views\AspNetPTMFormRole\Edit.cshtml" />
-    <Content Include="Views\AspNetPTMFormRole\Index.cshtml" />
-    <Content Include="Views\AspNetPTMFormRole\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetPTM_ParentFeedback\Create.cshtml" />
-    <Content Include="Views\AspNetPTM_ParentFeedback\Delete.cshtml" />
-    <Content Include="Views\AspNetPTM_ParentFeedback\Details.cshtml" />
-    <Content Include="Views\AspNetPTM_ParentFeedback\Edit.cshtml" />
-    <Content Include="Views\AspNetPTM_ParentFeedback\Index.cshtml" />
-    <Content Include="Views\AspNetPTM_ParentFeedback\ParentFeedback.cshtml" />
-    <Content Include="Views\AspNetPTM_TeacherFeedback\Create.cshtml" />
-    <Content Include="Views\AspNetPTM_TeacherFeedback\Delete.cshtml" />
-    <Content Include="Views\AspNetPTM_TeacherFeedback\Details.cshtml" />
-    <Content Include="Views\AspNetPTM_TeacherFeedback\Edit.cshtml" />
-    <Content Include="Views\AspNetPTM_TeacherFeedback\Index.cshtml" />
-    <Content Include="Views\AspNetPTM_TeacherFeedback\TeacherFeedback.cshtml" />
-    <Content Include="Views\AspNetPushNotifications\BlankPage.cshtml" />
-    <Content Include="Views\AspNetPushNotifications\Create.cshtml" />
-    <Content Include="Views\AspNetPushNotifications\Delete.cshtml" />
-    <Content Include="Views\AspNetPushNotifications\Details.cshtml" />
-    <Content Include="Views\AspNetPushNotifications\Edit.cshtml" />
-    <Content Include="Views\AspNetPushNotifications\Index.cshtml" />
-    <Content Include="Views\AspNetPushNotifications\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetRoles\Create.cshtml" />
-    <Content Include="Views\AspNetRoles\Delete.cshtml" />
-    <Content Include="Views\AspNetRoles\Details.cshtml" />
-    <Content Include="Views\AspNetRoles\Edit.cshtml" />
-    <Content Include="Views\AspNetRoles\Index.cshtml" />
-    <Content Include="Views\AspNetSalaries\Create.cshtml" />
-    <Content Include="Views\AspNetSalaries\Delete.cshtml" />
-    <Content Include="Views\AspNetSalaries\Details.cshtml" />
-    <Content Include="Views\AspNetSalaries\Edit.cshtml" />
-    <Content Include="Views\AspNetSalaries\Index.cshtml" />
-    <Content Include="Views\AspNetSalaries\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetSalaryDetail\Create.cshtml" />
-    <Content Include="Views\AspNetSalaryDetail\Delete.cshtml" />
-    <Content Include="Views\AspNetSalaryDetail\Details.cshtml" />
-    <Content Include="Views\AspNetSalaryDetail\Edit.cshtml" />
-    <Content Include="Views\AspNetSalaryDetail\Index.cshtml" />
-    <Content Include="Views\AspNetSalaryDetail\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetSession\Create.cshtml" />
-    <Content Include="Views\AspNetSession\Delete.cshtml" />
-    <Content Include="Views\AspNetSession\Details.cshtml" />
-    <Content Include="Views\AspNetSession\Edit.cshtml" />
-    <Content Include="Views\AspNetSession\Index.cshtml" />
-    <Content Include="Views\AspNetSession\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetStudentPerformanceReport\Create.cshtml" />
-    <Content Include="Views\AspNetStudentPerformanceReport\Delete.cshtml" />
-    <Content Include="Views\AspNetStudentPerformanceReport\Details.cshtml" />
-    <Content Include="Views\AspNetStudentPerformanceReport\Edit.cshtml" />
-    <Content Include="Views\AspNetStudentPerformanceReport\Index.cshtml" />
-    <Content Include="Views\AspNetStudentPerformanceReport\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetStudent_Discount\Create.cshtml" />
-    <Content Include="Views\AspNetStudent_Discount\Delete.cshtml" />
-    <Content Include="Views\AspNetStudent_Discount\Details.cshtml" />
-    <Content Include="Views\AspNetStudent_Discount\Edit.cshtml" />
-    <Content Include="Views\AspNetStudent_Discount\Index.cshtml" />
-    <Content Include="Views\AspNetStudent_Discount\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetStudent_Discount_Applicable\Create.cshtml" />
-    <Content Include="Views\AspNetStudent_Discount_Applicable\Delete.cshtml" />
-    <Content Include="Views\AspNetStudent_Discount_Applicable\Details.cshtml" />
-    <Content Include="Views\AspNetStudent_Discount_Applicable\Edit.cshtml" />
-    <Content Include="Views\AspNetStudent_Discount_Applicable\Index.cshtml" />
-    <Content Include="Views\AspNetStudent_Fine\Create.cshtml" />
-    <Content Include="Views\AspNetStudent_Fine\Delete.cshtml" />
-    <Content Include="Views\AspNetStudent_Fine\Details.cshtml" />
-    <Content Include="Views\AspNetStudent_Fine\Edit.cshtml" />
-    <Content Include="Views\AspNetStudent_Fine\Index.cshtml" />
-    <Content Include="Views\AspNetStudent_Fine\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetStudent_HomeWork\Create.cshtml" />
-    <Content Include="Views\AspNetStudent_HomeWork\Delete.cshtml" />
-    <Content Include="Views\AspNetStudent_HomeWork\Details.cshtml" />
-    <Content Include="Views\AspNetStudent_HomeWork\Edit.cshtml" />
-    <Content Include="Views\AspNetStudent_HomeWork\Index.cshtml" />
-    <Content Include="Views\AspNetStudent_HomeWork\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetStudent_PaymentDetail\Create.cshtml" />
-    <Content Include="Views\AspNetStudent_PaymentDetail\Delete.cshtml" />
-    <Content Include="Views\AspNetStudent_PaymentDetail\Details.cshtml" />
-    <Content Include="Views\AspNetStudent_PaymentDetail\Edit.cshtml" />
-    <Content Include="Views\AspNetStudent_PaymentDetail\Index.cshtml" />
-    <Content Include="Views\AspNetStudent_PaymentDetail\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetStudent_Payment\Create.cshtml" />
-    <Content Include="Views\AspNetStudent_Payment\Delete.cshtml" />
-    <Content Include="Views\AspNetStudent_Payment\Details.cshtml" />
-    <Content Include="Views\AspNetStudent_Payment\Edit.cshtml" />
-    <Content Include="Views\AspNetStudent_Payment\Index.cshtml" />
-    <Content Include="Views\AspNetStudent_Payment\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetSubject\ClassIndex.cshtml" />
-    <Content Include="Views\AspNetSubject\Create.cshtml" />
-    <Content Include="Views\AspNetSubject\Delete.cshtml" />
-    <Content Include="Views\AspNetSubject\Details.cshtml" />
-    <Content Include="Views\AspNetSubject\Edit.cshtml" />
-    <Content Include="Views\AspNetSubject\Index.cshtml" />
-    <Content Include="Views\AspNetSubject\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetSubject_Catalog\Create.cshtml" />
-    <Content Include="Views\AspNetSubject_Catalog\Delete.cshtml" />
-    <Content Include="Views\AspNetSubject_Catalog\Details.cshtml" />
-    <Content Include="Views\AspNetSubject_Catalog\Edit.cshtml" />
-    <Content Include="Views\AspNetSubject_Catalog\Index.cshtml" />
-    <Content Include="Views\AspNetSubject_Catalog\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetSubject_Curriculum\BlankPage.cshtml" />
-    <Content Include="Views\AspNetSubject_Curriculum\Create.cshtml" />
-    <Content Include="Views\AspNetSubject_Curriculum\Delete.cshtml" />
-    <Content Include="Views\AspNetSubject_Curriculum\Details.cshtml" />
-    <Content Include="Views\AspNetSubject_Curriculum\Edit.cshtml" />
-    <Content Include="Views\AspNetSubject_Curriculum\Index.cshtml" />
-    <Content Include="Views\AspNetSubject_Curriculum\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetSubject_Curriculum\_View_Curriculum.cshtml" />
-    <Content Include="Views\AspNetSubject_Homework\Create.cshtml" />
-    <Content Include="Views\AspNetSubject_Homework\Delete.cshtml" />
-    <Content Include="Views\AspNetSubject_Homework\Details.cshtml" />
-    <Content Include="Views\AspNetSubject_Homework\Edit.cshtml" />
-    <Content Include="Views\AspNetSubject_Homework\Index.cshtml" />
-    <Content Include="Views\AspNetSubject_Homework\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetTeacher\Create.cshtml" />
-    <Content Include="Views\AspNetTeacher\Delete.cshtml" />
-    <Content Include="Views\AspNetTeacher\Details.cshtml" />
-    <Content Include="Views\AspNetTeacher\Edit.cshtml" />
-    <Content Include="Views\AspNetTeacher\Index.cshtml" />
-    <Content Include="Views\AspNetTeacher\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetTerm\Create.cshtml" />
-    <Content Include="Views\AspNetTerm\Delete.cshtml" />
-    <Content Include="Views\AspNetTerm\Details.cshtml" />
-    <Content Include="Views\AspNetTerm\Edit.cshtml" />
-    <Content Include="Views\AspNetTerm\Index.cshtml" />
-    <Content Include="Views\AspNetTerm\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetTopic\Create.cshtml" />
-    <Content Include="Views\AspNetTopic\Delete.cshtml" />
-    <Content Include="Views\AspNetTopic\Details.cshtml" />
-    <Content Include="Views\AspNetTopic\Edit.cshtml" />
-    <Content Include="Views\AspNetTopic\Index.cshtml" />
-    <Content Include="Views\AspNetTopic\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetUser\AccountantDetail.cshtml" />
-    <Content Include="Views\AspNetUser\AccountantEdit.cshtml" />
-    <Content Include="Views\AspNetUser\AccountantIndex.cshtml" />
-    <Content Include="Views\AspNetUser\AddUser.cshtml" />
-    <Content Include="Views\AspNetUser\Create.cshtml" />
-    <Content Include="Views\AspNetUser\Delete.cshtml" />
-    <Content Include="Views\AspNetUser\Details.cshtml" />
-    <Content Include="Views\AspNetUser\DisableAccountantIndex.cshtml" />
-    <Content Include="Views\AspNetUser\DisableParentIndex.cshtml" />
-    <Content Include="Views\AspNetUser\DisableStudentIndex.cshtml" />
-    <Content Include="Views\AspNetUser\Edit.cshtml" />
-    <Content Include="Views\AspNetUser\EditStudent.cshtml" />
-    <Content Include="Views\AspNetUser\EditTeacher.cshtml" />
-    <Content Include="Views\AspNetUser\EmployeeDetail.cshtml" />
-    <Content Include="Views\AspNetUser\Index.cshtml" />
-    <Content Include="Views\AspNetUser\ParentDetail.cshtml" />
-    <Content Include="Views\AspNetUser\ParentEdit.cshtml" />
-    <Content Include="Views\AspNetUser\ParentIndex.cshtml" />
-    <Content Include="Views\AspNetUser\StudentDetail.cshtml" />
-    <Content Include="Views\AspNetUser\StudentsIndex.cshtml" />
-    <Content Include="Views\AspNetUser\TeacherDetail.cshtml" />
-    <Content Include="Views\AspNetUser\TeachersIndex.cshtml" />
-    <Content Include="Views\AspNetUser\_ViewStart.cshtml" />
-    <Content Include="Views\AspNetVirtualRoles\Create.cshtml" />
-    <Content Include="Views\AspNetVirtualRoles\Delete.cshtml" />
-    <Content Include="Views\AspNetVirtualRoles\Details.cshtml" />
-    <Content Include="Views\AspNetVirtualRoles\Edit.cshtml" />
-    <Content Include="Views\AspNetVirtualRoles\Index.cshtml" />
-    <Content Include="Views\AspNetVirtualRoles\_ViewStart.cshtml" />
-    <Content Include="Views\FeeManagement\BlankPage.cshtml" />
-    <Content Include="Views\FeeManagement\FeeManagement_Dashboard.cshtml" />
-    <Content Include="Views\FeeManagement\SalaryHistory.cshtml" />
-    <Content Include="Views\FeeManagement\_Challan_Form.cshtml" />
-    <Content Include="Views\FeeManagement\_Class_Fee.cshtml" />
-    <Content Include="Views\FeeManagement\_Defaulters.cshtml" />
-    <Content Include="Views\FeeManagement\_Discount_Type.cshtml" />
-    <Content Include="Views\FeeManagement\_Fee_Duration.cshtml" />
-    <Content Include="Views\FeeManagement\_Fee_Type.cshtml" />
-    <Content Include="Views\FeeManagement\_Status_Clear.cshtml" />
-    <Content Include="Views\FeeManagement\_Student_Challan_Form.cshtml" />
-    <Content Include="Views\FeeManagement\_Student_Discount.cshtml" />
-    <Content Include="Views\FeeManagement\_Student_History.cshtml" />
-    <Content Include="Views\FeeManagement\_ViewStart.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
-    <Content Include="Views\Parent_Dashboard\AnnouncementDetail.cshtml" />
-    <Content Include="Views\Parent_Dashboard\Assessment_Detail.cshtml" />
-    <Content Include="Views\Parent_Dashboard\BlankPage.cshtml" />
-    <Content Include="Views\Parent_Dashboard\DiaryDetails.cshtml" />
-    <Content Include="Views\Parent_Dashboard\NotificationDetail.cshtml" />
-    <Content Include="Views\Parent_Dashboard\Parent_Dashboard.cshtml" />
-    <Content Include="Views\Parent_Dashboard\Project_Detail.cshtml" />
-    <Content Include="Views\Parent_Dashboard\StudentAssessment.cshtml" />
-    <Content Include="Views\Parent_Dashboard\Student_HomeWork.cshtml" />
-    <Content Include="Views\Parent_Dashboard\Student_Projects.cshtml" />
-    <Content Include="Views\Parent_Dashboard\View_Assessment.cshtml" />
-    <Content Include="Views\Parent_Dashboard\_ParentTeacherMeeting.cshtml" />
-    <Content Include="Views\Parent_Dashboard\_Student_Announcement.cshtml" />
-    <Content Include="Views\Parent_Dashboard\_Student_Attendance.cshtml" />
-    <Content Include="Views\Parent_Dashboard\_Student_Marks.cshtml" />
-    <Content Include="Views\Parent_Dashboard\_ViewStart.cshtml" />
-    <Content Include="Views\Principal_Dashboard\BlankPage.cshtml" />
-    <Content Include="Views\Principal_Dashboard\EmployeeAttendance.cshtml" />
-    <Content Include="Views\Principal_Dashboard\_ViewStart.cshtml" />
-    <Content Include="Views\Reports\Assessment_Report.cshtml" />
-    <Content Include="Views\Reports\Multiple_Assessment.cshtml" />
-    <Content Include="Views\Reports\_Assignment_Report.cshtml" />
-    <Content Include="Views\Reports\_Exam_Report.cshtml" />
-    <Content Include="Views\Reports\_MultipleAssignment_Report.cshtml" />
-    <Content Include="Views\Reports\_MultipleExam_Report.cshtml" />
-    <Content Include="Views\Reports\_MultipleTest_Report.cshtml" />
-    <Content Include="Views\Reports\_Student_Report.cshtml" />
-    <Content Include="Views\Reports\_Test_Report.cshtml" />
-    <Content Include="Views\Reports\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\Principal_DashboardLayout.cshtml" />
-    <Content Include="Views\Shared\Supervisor_DashboardLayout.cshtml" />
     <Content Include="Views\Shared\_AccountantDashboardLayout.cshtml" />
     <Content Include="Views\Shared\_AdminDashboardLayout.cshtml" />
     <Content Include="Views\Shared\_AdminLteBreadcrumb.cshtml" />
     <Content Include="Views\Shared\_AdminLteLayout.cshtml" />
     <Content Include="Views\Shared\_AdminLteLeftMenu.cshtml" />
     <Content Include="Views\Shared\_AdminLteTopMenu.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\Principal_DashboardLayout.cshtml" />
+    <Content Include="Views\Shared\Supervisor_DashboardLayout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_ParentDashboardLayout.cshtml" />
     <Content Include="Views\Shared\_SideBarPartial.cshtml" />
     <Content Include="Views\Shared\_StudentDashboardLayout.cshtml" />
     <Content Include="Views\Shared\_TeacherDashboardLayout.cshtml" />
-    <Content Include="Views\Student_Dashboard\AnnouncementDetail.cshtml" />
-    <Content Include="Views\Student_Dashboard\Assessment.cshtml" />
-    <Content Include="Views\Student_Dashboard\Assessment_Detail.cshtml" />
-    <Content Include="Views\Student_Dashboard\BlankPage.cshtml" />
-    <Content Include="Views\Student_Dashboard\PerformanceReports.cshtml" />
-    <Content Include="Views\Student_Dashboard\PerformanceReport_Detail.cshtml" />
-    <Content Include="Views\Student_Dashboard\Project_Detail.cshtml" />
-    <Content Include="Views\Student_Dashboard\StudentAssessment.cshtml" />
-    <Content Include="Views\Student_Dashboard\Student_Dashboard.cshtml" />
-    <Content Include="Views\Student_Dashboard\View_Assessment.cshtml" />
-    <Content Include="Views\Student_Dashboard\View_Project.cshtml" />
-    <Content Include="Views\Student_Dashboard\_Student_Announcement.cshtml" />
-    <Content Include="Views\Student_Dashboard\_Student_Attendance.cshtml" />
-    <Content Include="Views\Student_Dashboard\_Student_Marks.cshtml" />
-    <Content Include="Views\Student_Dashboard\_ViewStart.cshtml" />
-    <Content Include="Views\Supervisor_Dashboard\BlankPage.cshtml" />
-    <Content Include="Views\Supervisor_Dashboard\EmployeeAttendance.cshtml" />
-    <Content Include="Views\Supervisor_Dashboard\_ViewStart.cshtml" />
-    <Content Include="Views\Teacher_Dashboard\BlankPage.cshtml" />
-    <Content Include="Views\Teacher_Dashboard\CreateStudent.cshtml" />
-    <Content Include="Views\Teacher_Dashboard\EditStudent.cshtml" />
-    <Content Include="Views\Teacher_Dashboard\StudentDetail.cshtml" />
-    <Content Include="Views\Teacher_Dashboard\StudentsIndex.cshtml" />
-    <Content Include="Views\Teacher_Dashboard\Teacher_Dashboard.cshtml" />
-    <Content Include="Views\Teacher_Dashboard\View_Attendance.cshtml" />
-    <Content Include="Views\Teacher_Dashboard\View_LessonPlan.cshtml" />
-    <Content Include="Views\Teacher_Dashboard\_Add_Curriculum.cshtml" />
-    <Content Include="Views\Teacher_Dashboard\_Assessment.cshtml" />
-    <Content Include="Views\Teacher_Dashboard\_Attendance.cshtml" />
-    <Content Include="Views\Teacher_Dashboard\_Calendar_View.cshtml" />
-    <Content Include="Views\Teacher_Dashboard\_ClassAssessment.cshtml" />
-    <Content Include="Views\Teacher_Dashboard\_LessonPlan.cshtml" />
-    <Content Include="Views\Teacher_Dashboard\_LessonPlanView.cshtml" />
-    <Content Include="Views\Teacher_Dashboard\_ParentTeacherMeeting.cshtml" />
-    <Content Include="Views\Teacher_Dashboard\_SubjectAssessment.cshtml" />
-    <Content Include="Views\Teacher_Dashboard\_Teacher_Announcement.cshtml" />
-    <Content Include="Views\Teacher_Dashboard\_Teacher_Subject.cshtml" />
-    <Content Include="Views\Teacher_Dashboard\_Topics.cshtml" />
-    <Content Include="Views\Teacher_Dashboard\_ViewStart.cshtml" />
-    <Content Include="Views\TermAssessment\ClassEvaluation.cshtml" />
-    <Content Include="Views\TermAssessment\CreateTermAssessment.cshtml" />
-    <Content Include="Views\TermAssessment\CreateTermAssessments.cshtml" />
-    <Content Include="Views\TermAssessment\Evaluation.cshtml" />
-    <Content Include="Views\TermAssessment\EvaluationForm.cshtml" />
-    <Content Include="Views\TermAssessment\_ViewStart.cshtml" />
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2757,10 +1810,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE\select2-master\docs\dist\" />
-    <Folder Include="App_Data\" />
-    <Folder Include="Views\AspNetAttendance\" />
-    <Folder Include="Views\AspNetFinanceVoucherRecords\" />
-    <Folder Include="Views\ParentTeacherMeeting\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -2778,9 +1827,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>19336</DevelopmentServerPort>
+          <DevelopmentServerPort>54693</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:19336/</IISUrl>
+          <IISUrl>http://localhost:54693/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
