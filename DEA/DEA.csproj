@@ -1802,6 +1802,7 @@
     <Content Include="Views\Shared\_SideBarPartial.cshtml" />
     <Content Include="Views\Shared\_StudentDashboardLayout.cshtml" />
     <Content Include="Views\Shared\_TeacherDashboardLayout.cshtml" />
+    <Content Include="Views\Account\Login_User.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

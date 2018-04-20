@@ -32,20 +32,20 @@
         </div>
         <div class="login-box-body">
             <p class="login-box-msg">Sign in to start your session</p>
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+            @using (Html.BeginForm("Login_User", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
             {
                 @Html.AntiForgeryToken()
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group has-feedback">
                     <label style="font-weight:normal; font-size:15px;">Username:</label>
-                    @*@Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "Username" , Style= "border-radius:3px;" })
-                    @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })*@
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "Username" , Style= "border-radius:3px;" })
+                    @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
                     <label style="font-weight:normal; font-size:15px;">Password:</label>
-                    @*@Html.PasswordFor(m => m.Password, new { @class = "form-control", type = "password", placeholder = "Password", Style = "border-radius:3px;" })
-                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })*@
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", type = "password", placeholder = "Password", Style = "border-radius:3px;" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
                 <div class="row">                  

@@ -18,6 +18,7 @@ namespace DEA.Models
         public Role()
         {
             this.Employees = new HashSet<Employee>();
+            this.Users = new HashSet<User>();
         }
     
         public int RoleID { get; set; }
@@ -25,5 +26,7 @@ namespace DEA.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Employee> Employees { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> Users { get; set; }
     }
 }
