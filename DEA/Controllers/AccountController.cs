@@ -18,6 +18,10 @@ namespace DEA.Controllers
         {
             return View();
         }
+        public ActionResult NewLogin()
+        {
+            return View();
+        }
         public ActionResult Login_User()
         {
 
