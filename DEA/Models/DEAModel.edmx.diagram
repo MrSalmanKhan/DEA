@@ -48,6 +48,7 @@
         <AssociationConnector Association="DEA_DBModel.FK_Term_Session" />
         <AssociationConnector Association="DEA_DBModel.FK_Student_User" />
         <AssociationConnector Association="DEA_DBModel.FK_StudentAttandence_Student" />
+        <AssociationConnector Association="DEA_DBModel.FK_Users_Role" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

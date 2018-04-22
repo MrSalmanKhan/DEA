@@ -32,10 +32,10 @@ namespace DEA.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public string PhoneNumber { get; set; }
-        public string Role { get; set; }
         public bool Status { get; set; }
         public string Image { get; set; }
         public Nullable<System.DateTime> TimeStamp { get; set; }
+        public int RoleID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ActivityLog> ActivityLogs { get; set; }
@@ -51,5 +51,6 @@ namespace DEA.Models
         public virtual ICollection<Parent> Parents { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Student> Students { get; set; }
+        public virtual Role Role1 { get; set; }
     }
 }
