@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Create Class</h2>
 
 @using (Html.BeginForm()) 
 {
@@ -23,9 +23,9 @@
         </div>*@
 
         <div class="form-group">
-            <label class="control-label col-md-2" for="SubjectName">Class</label>
+            <label class="control-label col-md-2" for="SubjectName">Class name</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Class1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Class1, new { htmlAttributes = new { @class = "form-control", @id = "Class", @onkeypress = "classname()", @onpaste = "classname()" } })
                 @Html.ValidationMessageFor(model => model.Class1, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -33,7 +33,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Section, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Section, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Section, new { htmlAttributes = new { @class = "form-control", @id = "Section", @onkeypress = "classname()", @onpaste = "classname()" } })
                 @Html.ValidationMessageFor(model => model.Section, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -41,7 +41,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ClassName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ClassName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.ClassName, new { htmlAttributes = new { @class = "form-control", @id = "ClassName", @readonly = "readonly"} })
                 @Html.ValidationMessageFor(model => model.ClassName, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -57,3 +57,19 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+<script>
+    $(document).ready(function () {
+        function classname() {
+            debugger;
+            var classval = $("#Class").val();
+            var sectionval = $("#Section").val();
+            $("#ClassName").val() = classval + sectionval;
+        }
+    });
+    function classname() {
+        debugger;
+        var classval = $("#Class").val();
+        var sectionval = $("#Section").val();
+        $("#ClassName").val(classval + " " + sectionval);
+    }
+</script>

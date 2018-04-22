@@ -36,7 +36,6 @@ namespace DEA.Models
         public bool Status { get; set; }
         public string Image { get; set; }
         public Nullable<System.DateTime> TimeStamp { get; set; }
-        public int RoleID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ActivityLog> ActivityLogs { get; set; }
