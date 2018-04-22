@@ -722,10 +722,6 @@
             <End Role="Subject" EntitySet="Subjects" />
             <End Role="Project" EntitySet="Projects" />
           </AssociationSet>
-          <AssociationSet Name="FK_Users_Role" Association="DEA_DBModel.FK_Users_Role">
-            <End Role="Role" EntitySet="Roles" />
-            <End Role="User" EntitySet="Users" />
-          </AssociationSet>
           <AssociationSet Name="FK_Term_Session" Association="DEA_DBModel.FK_Term_Session">
             <End Role="Session" EntitySet="Sessions" />
             <End Role="Term" EntitySet="Terms" />
@@ -737,6 +733,10 @@
           <AssociationSet Name="FK_StudentAttandence_Student" Association="DEA_DBModel.FK_StudentAttandence_Student">
             <End Role="Student" EntitySet="Students" />
             <End Role="StudentAttandence" EntitySet="StudentAttandences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Role" Association="DEA_DBModel.FK_Users_Role">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="User" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="ActivityLog">
@@ -996,7 +996,6 @@
           <Property Name="Email" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
           <Property Name="PhoneNumber" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
-          <Property Name="RoleID" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="Boolean" Nullable="false" />
           <Property Name="Image" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
           <Property Name="TimeStamp" Type="DateTime" Precision="3" />
@@ -1006,8 +1005,9 @@
           <NavigationProperty Name="Messages" Relationship="DEA_DBModel.FK_Message_User" FromRole="User" ToRole="Message" />
           <NavigationProperty Name="MessageReceivers" Relationship="DEA_DBModel.FK_MessageReceiver_User" FromRole="User" ToRole="MessageReceiver" />
           <NavigationProperty Name="Parents" Relationship="DEA_DBModel.FK_Parent_User" FromRole="User" ToRole="Parent" />
-          <NavigationProperty Name="Role" Relationship="DEA_DBModel.FK_Users_Role" FromRole="User" ToRole="Role" />
           <NavigationProperty Name="Students" Relationship="DEA_DBModel.FK_Student_User" FromRole="User" ToRole="Student" />
+          <Property Name="RoleID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Role1" Relationship="DEA_DBModel.FK_Users_Role" FromRole="User" ToRole="Role" />
         </EntityType>
         <Association Name="FK_ActivityLog_Users">
           <End Type="DEA_DBModel.User" Role="User" Multiplicity="0..1" />
@@ -1237,18 +1237,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Users_Role">
-          <End Type="DEA_DBModel.Role" Role="Role" Multiplicity="1" />
-          <End Type="DEA_DBModel.User" Role="User" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Role">
-              <PropertyRef Name="RoleID" />
-            </Principal>
-            <Dependent Role="User">
-              <PropertyRef Name="RoleID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Term_Session">
           <End Type="DEA_DBModel.Session" Role="Session" Multiplicity="0..1" />
           <End Type="DEA_DBModel.Term" Role="Term" Multiplicity="*" />
@@ -1282,6 +1270,18 @@
             </Principal>
             <Dependent Role="StudentAttandence">
               <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Role">
+          <End Type="DEA_DBModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="DEA_DBModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="RoleID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1523,10 +1523,10 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="DEA_DBModel.User">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
                 <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
                 <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Email" ColumnName="Email" />

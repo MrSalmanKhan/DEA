@@ -50,6 +50,10 @@ namespace DEA.Controllers
         {
             if (ModelState.IsValid)
             {
+                DEA_DBEntities db = new DEA_DBEntities();
+                int cid = db.Classes.Select(x => x.ClassID).Max();
+                cid++;
+                @class.ClassID = cid;
                 db.Classes.Add(@class);
                 db.SaveChanges();
                 return RedirectToAction("Index");
