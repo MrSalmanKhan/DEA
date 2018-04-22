@@ -28,7 +28,7 @@ namespace DEA.Controllers
             {
                 if (p.Password == pass && p.RoleID == 1)
                 {
-                    return View();
+                    return RedirectToAction("Index","Admin");
                 }
             }
            
