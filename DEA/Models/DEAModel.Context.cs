@@ -13,10 +13,10 @@ namespace DEA.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DEA_DBEntities : DbContext
+    public partial class DBEntities : DbContext
     {
-        public DEA_DBEntities()
-            : base("name=DEA_DBEntities")
+        public DBEntities()
+            : base("name=DBEntities")
         {
         }
     

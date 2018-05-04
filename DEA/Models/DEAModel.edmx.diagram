@@ -4,52 +4,51 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9e1da4b386b44638b59a127c82ff3c88" Name="Diagram1" ZoomLevel="112">
-        <EntityTypeShape EntityType="DEA_DBModel.ActivityLog" Width="1.5" PointX="5.25" PointY="14.25" />
-        <EntityTypeShape EntityType="DEA_DBModel.Announcement" Width="1.5" PointX="0.75" PointY="4.75" />
-        <EntityTypeShape EntityType="DEA_DBModel.Attendance" Width="1.5" PointX="14.75" PointY="14.625" />
-        <EntityTypeShape EntityType="DEA_DBModel.Class" Width="1.5" PointX="10.25" PointY="8" />
-        <EntityTypeShape EntityType="DEA_DBModel.Diary" Width="1.5" PointX="12.5" PointY="9.25" />
-        <EntityTypeShape EntityType="DEA_DBModel.Employee" Width="1.5" PointX="10.25" PointY="11.75" />
-        <EntityTypeShape EntityType="DEA_DBModel.EmployeeAttandence" Width="1.5" PointX="12.5" PointY="18.875" />
-        <EntityTypeShape EntityType="DEA_DBModel.HomeWork" Width="1.5" PointX="14.75" PointY="11.125" />
-        <EntityTypeShape EntityType="DEA_DBModel.LoginTime" Width="1.5" PointX="5.25" PointY="8.125" />
-        <EntityTypeShape EntityType="DEA_DBModel.Message" Width="1.5" PointX="5.25" PointY="10.75" />
-        <EntityTypeShape EntityType="DEA_DBModel.MessageReceiver" Width="1.5" PointX="7.5" PointY="12.625" />
-        <EntityTypeShape EntityType="DEA_DBModel.Parent" Width="1.5" PointX="5.25" PointY="17" />
-        <EntityTypeShape EntityType="DEA_DBModel.ParentTeacherMeeting" Width="1.5" PointX="2.75" PointY="4.75" />
-        <EntityTypeShape EntityType="DEA_DBModel.Project" Width="1.5" PointX="14.75" PointY="17.375" />
-        <EntityTypeShape EntityType="DEA_DBModel.Role" Width="1.5" PointX="0.75" PointY="13.375" />
-        <EntityTypeShape EntityType="DEA_DBModel.Session" Width="1.5" PointX="0.75" PointY="1.125" />
-        <EntityTypeShape EntityType="DEA_DBModel.Student" Width="1.5" PointX="7.5" PointY="15.5" />
-        <EntityTypeShape EntityType="DEA_DBModel.StudentAttandence" Width="1.5" PointX="17" PointY="15.5" />
-        <EntityTypeShape EntityType="DEA_DBModel.Subject" Width="1.5" PointX="12.5" PointY="12.875" />
-        <EntityTypeShape EntityType="DEA_DBModel.Term" Width="1.5" PointX="3" PointY="1" />
-        <EntityTypeShape EntityType="DEA_DBModel.User" Width="1.5" PointX="3" PointY="12" />
-        <AssociationConnector Association="DEA_DBModel.FK_ActivityLog_Users" />
-        <AssociationConnector Association="DEA_DBModel.FK_Attendance_Subject" />
-        <AssociationConnector Association="DEA_DBModel.FK_StudentAttandence_Attendance" />
-        <AssociationConnector Association="DEA_DBModel.FK_Diary_Class" />
-        <AssociationConnector Association="DEA_DBModel.FK_Student_Class" />
-        <AssociationConnector Association="DEA_DBModel.FK_Subject_Class" />
-        <AssociationConnector Association="DEA_DBModel.FK_HomeWork_Diary" />
-        <AssociationConnector Association="DEA_DBModel.FK_Employee_Role" />
-        <AssociationConnector Association="DEA_DBModel.FK_Employee_User" />
-        <AssociationConnector Association="DEA_DBModel.FK_EmployeeAttandence_Employee" />
-        <AssociationConnector Association="DEA_DBModel.FK_Subject_Teacher" />
-        <AssociationConnector Association="DEA_DBModel.FK_HomeWork_Subject" />
-        <AssociationConnector Association="DEA_DBModel.FK_LoginTime_User" />
-        <AssociationConnector Association="DEA_DBModel.FK_Message_User" />
-        <AssociationConnector Association="DEA_DBModel.FK_MessageReceiver_Message" />
-        <AssociationConnector Association="DEA_DBModel.FK_MessageReceiver_User" />
-        <AssociationConnector Association="DEA_DBModel.FK_Parent_User" />
-        <AssociationConnector Association="DEA_DBModel.FK_Student_Parent" />
-        <AssociationConnector Association="DEA_DBModel.FK_Project_Subject" />
-        <AssociationConnector Association="DEA_DBModel.FK_Users_Role" />
-        <AssociationConnector Association="DEA_DBModel.FK_Term_Session" />
-        <AssociationConnector Association="DEA_DBModel.FK_Student_User" />
-        <AssociationConnector Association="DEA_DBModel.FK_StudentAttandence_Student" />
-        <AssociationConnector Association="DEA_DBModel.FK_Users_Role" />
+      <Diagram DiagramId="cfef88cfed3e4bac970cda6831f21f4c" Name="Diagram1">
+        <EntityTypeShape EntityType="DEA_DBModel.ActivityLog" Width="1.5" PointX="5.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="DEA_DBModel.Announcement" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DEA_DBModel.Attendance" Width="1.5" PointX="15.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DEA_DBModel.Class" Width="1.5" PointX="11.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DEA_DBModel.Diary" Width="1.5" PointX="16.5" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DEA_DBModel.Employee" Width="1.5" PointX="8.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DEA_DBModel.EmployeeAttandence" Width="1.5" PointX="10.5" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DEA_DBModel.HomeWork" Width="1.5" PointX="18.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DEA_DBModel.LoginTime" Width="1.5" PointX="5.25" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DEA_DBModel.Message" Width="1.5" PointX="5.25" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DEA_DBModel.MessageReceiver" Width="1.5" PointX="7.5" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="DEA_DBModel.Parent" Width="1.5" PointX="5.25" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DEA_DBModel.ParentTeacherMeeting" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DEA_DBModel.Project" Width="1.5" PointX="15.75" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DEA_DBModel.Role" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DEA_DBModel.Session" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DEA_DBModel.Student" Width="1.5" PointX="10.5" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DEA_DBModel.StudentAttandence" Width="1.5" PointX="18" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DEA_DBModel.Subject" Width="1.5" PointX="13.5" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DEA_DBModel.Term" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DEA_DBModel.User" Width="1.5" PointX="3" PointY="17.75" IsExpanded="true" />
+        <AssociationConnector Association="DEA_DBModel.FK_ActivityLog_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_Attendance_Subject" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_StudentAttandence_Attendance" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_Diary_Class" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_Student_Class" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_Subject_Class" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_HomeWork_Diary" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_Employee_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_Employee_User" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_EmployeeAttandence_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_Subject_Teacher" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_HomeWork_Subject" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_LoginTime_User" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_Message_User" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_MessageReceiver_Message" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_MessageReceiver_User" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_Parent_User" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_Student_Parent" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_Project_Subject" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_Users_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_Term_Session" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_Student_User" ManuallyRouted="false" />
+        <AssociationConnector Association="DEA_DBModel.FK_StudentAttandence_Student" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

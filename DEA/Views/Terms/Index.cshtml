@@ -1,0 +1,58 @@
+﻿@model IEnumerable<DEA.Models.Term>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminSidebar.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TermName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TermStartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TermEndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Session.SessionName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TermName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TermStartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TermEndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Session.SessionName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TermID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TermID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TermID })
+        </td>
+    </tr>
+}
+
+</table>
