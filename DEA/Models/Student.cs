@@ -21,8 +21,8 @@ namespace DEA.Models
         }
     
         public int StudentID { get; set; }
-        public Nullable<int> UserId { get; set; }
-        public Nullable<int> ClassId { get; set; }
+        public Nullable<int> UserID { get; set; }
+        public Nullable<int> ClassID { get; set; }
         public Nullable<System.DateTime> DOB { get; set; }
         public string Nationality { get; set; }
         public string Religion { get; set; }

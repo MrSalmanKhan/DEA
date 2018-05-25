@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_AdminSidebar.cshtml";
 }
 
-<h2>Edit Employee</h2>
+<h2>Edit Teacher</h2>
 
 @using (Html.BeginForm())
 {
@@ -40,9 +40,7 @@
                 @Html.ValidationMessageFor(model => model.user.Email, "", new { @class = "text-danger" })
             </div>
         </div>
-
-                @Html.HiddenFor(model => model.user.Password, new { htmlAttributes = new { @class = "form-control" } })
-
+                  @Html.HiddenFor(model => model.user.Password, new { htmlAttributes = new { @class = "form-control" } })
         <div class="form-group">
             @Html.LabelFor(model => model.user.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -54,7 +52,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.user.RoleID, "RoleID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("RoleIDemp", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("RoleID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.user.RoleID, "", new { @class = "text-danger" })
             </div>
         </div>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DEA_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DEA_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ActivityLog">
           <Key>
             <PropertyRef Name="LogID" />
@@ -620,8 +620,7 @@
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DEA_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -822,8 +821,8 @@
             <PropertyRef Name="StudentID" />
           </Key>
           <Property Name="StudentID" Type="Int32" Nullable="false" />
-          <Property Name="UserId" Type="Int32" />
-          <Property Name="ClassId" Type="Int32" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="ClassID" Type="Int32" />
           <Property Name="DOB" Type="DateTime" Precision="3" />
           <Property Name="Nationality" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
           <Property Name="Religion" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
@@ -951,7 +950,7 @@
               <PropertyRef Name="ClassID" />
             </Principal>
             <Dependent Role="Student">
-              <PropertyRef Name="ClassId" />
+              <PropertyRef Name="ClassID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1155,7 +1154,7 @@
               <PropertyRef Name="UserID" />
             </Principal>
             <Dependent Role="Student">
-              <PropertyRef Name="UserId" />
+              <PropertyRef Name="UserID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1478,8 +1477,8 @@
             <EntityTypeMapping TypeName="DEA_DBModel.Student">
               <MappingFragment StoreEntitySet="Student">
                 <ScalarProperty Name="StudentID" ColumnName="StudentID" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+                <ScalarProperty Name="UserID" ColumnName="UserId" />
+                <ScalarProperty Name="ClassID" ColumnName="ClassId" />
                 <ScalarProperty Name="DOB" ColumnName="DOB" />
                 <ScalarProperty Name="Nationality" ColumnName="Nationality" />
                 <ScalarProperty Name="Religion" ColumnName="Religion" />

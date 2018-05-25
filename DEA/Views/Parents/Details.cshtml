@@ -1,0 +1,91 @@
+﻿@model DEA.Models.Parent
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminSidebar.cshtml";
+}
+
+<h2>Parent Details</h2>
+
+<div>
+    <h4>Parent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FatherName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FatherName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FatherEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FatherEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FatherCell)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FatherCell)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FatherOccupation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FatherOccupation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotherName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotherName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotherEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotherEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotherCell)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotherCell)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotherOccupation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotherOccupation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
